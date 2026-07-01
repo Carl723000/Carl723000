@@ -61,15 +61,15 @@ function renderHeatmapSvg(daily) {
   }
   for (const c of cells) c.b = bucket(c.v, max);
 
-  const cell = 11, gap = 3, step = cell + gap, padL = 30, titleH = 16, monthH = 14, padT = titleH + monthH;
-  const gridW = columns * step, gridH = 7 * step, footerH = 24;
+  const cell = 12, gap = 3, step = cell + gap, padL = 38, titleH = 24, monthH = 18, padT = titleH + monthH;
+  const gridW = columns * step, gridH = 7 * step, footerH = 30;
   const width = padL + gridW + 10, height = padT + gridH + footerH;
   const year = Number(today.slice(0, 4));
 
   const out = [];
   out.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">`);
   out.push(`<rect width="${width}" height="${height}" fill="#ffffff"/>`);
-  out.push(`<text x="${padL}" y="11" font-size="12" font-weight="600" fill="#24292f">${compact(total)} tokens in Claude Code · ${year}</text>`);
+  out.push(`<text x="${padL}" y="16" font-size="15" font-weight="600" fill="#24292f">${compact(total)} tokens in Claude Code · ${year}</text>`);
   for (const c of cells) {
     const x = padL + c.col * step, y = padT + c.row * step;
     const tip = c.v <= 0 ? `No tokens on ${longDate(c.iso)}` : `${compact(c.v)} tokens on ${longDate(c.iso)}`;
@@ -80,19 +80,19 @@ function renderHeatmapSvg(daily) {
     const first = cells.find((c) => c.col === col);
     if (!first) continue;
     const m = Number(first.iso.slice(5, 7)) - 1;
-    if (m !== lastMonth) { lastMonth = m; out.push(`<text x="${padL + col * step}" y="${titleH + 10}" font-size="10" fill="#57606a">${MONTHS[m]}</text>`); }
+    if (m !== lastMonth) { lastMonth = m; out.push(`<text x="${padL + col * step}" y="${titleH + 13}" font-size="12" fill="#57606a">${MONTHS[m]}</text>`); }
   }
   for (const [row, label] of [[1, 'Mon'], [3, 'Wed'], [5, 'Fri']]) {
-    out.push(`<text x="0" y="${padT + row * step + cell - 1}" font-size="9" fill="#57606a">${label}</text>`);
+    out.push(`<text x="0" y="${padT + row * step + cell - 1}" font-size="11" fill="#57606a">${label}</text>`);
   }
-  const footY = padT + gridH + 14;
+  const footY = padT + gridH + 18;
   out.push(`<rect x="${padL}" y="${footY - 8}" width="9" height="9" rx="2" ry="2" fill="${SCALE[3]}"/>`);
-  out.push(`<text x="${padL + 13}" y="${footY}" font-size="9" fill="#57606a">Made with Claude Code Usage</text>`);
+  out.push(`<text x="${padL + 13}" y="${footY}" font-size="11" fill="#57606a">Made with Claude Code Usage</text>`);
   let lx = padL + gridW - (5 * step + 56);
-  out.push(`<text x="${lx}" y="${footY}" font-size="9" fill="#57606a">Less</text>`);
+  out.push(`<text x="${lx}" y="${footY}" font-size="11" fill="#57606a">Less</text>`);
   lx += 26;
   for (let b = 0; b < 5; b++) out.push(`<rect x="${lx + b * step}" y="${footY - 9}" width="${cell}" height="${cell}" rx="2" ry="2" fill="${SCALE[b]}"/>`);
-  out.push(`<text x="${lx + 5 * step + 4}" y="${footY}" font-size="9" fill="#57606a">More</text>`);
+  out.push(`<text x="${lx + 5 * step + 4}" y="${footY}" font-size="11" fill="#57606a">More</text>`);
   out.push('</svg>');
   return out.join('\n');
 }
