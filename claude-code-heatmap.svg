@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="782" height="152" viewBox="0 0 782 152" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
 <rect width="782" height="152" fill="#ffffff"/>
-<text x="30" y="11" font-size="12" font-weight="600" fill="#24292f">5.3B tokens in Claude Code · 2026</text>
+<text x="30" y="11" font-size="12" font-weight="600" fill="#24292f">5.4B tokens in Claude Code · 2026</text>
 <rect x="30" y="30" width="11" height="11" rx="2" ry="2" fill="#ebedf0"><title>No tokens on June 29th</title></rect>
 <rect x="30" y="44" width="11" height="11" rx="2" ry="2" fill="#ebedf0"><title>No tokens on June 30th</title></rect>
 <rect x="30" y="58" width="11" height="11" rx="2" ry="2" fill="#ebedf0"><title>No tokens on July 1st</title></rect>
@@ -345,7 +345,7 @@
 <rect x="702" y="100" width="11" height="11" rx="2" ry="2" fill="#f0aa82"><title>151.3M tokens on June 5th</title></rect>
 <rect x="702" y="114" width="11" height="11" rx="2" ry="2" fill="#f0aa82"><title>143.3M tokens on June 6th</title></rect>
 <rect x="716" y="30" width="11" height="11" rx="2" ry="2" fill="#f0aa82"><title>110.2M tokens on June 7th</title></rect>
-<rect x="716" y="44" width="11" height="11" rx="2" ry="2" fill="#e07d4f"><title>156.1M tokens on June 8th</title></rect>
+<rect x="716" y="44" width="11" height="11" rx="2" ry="2" fill="#f0aa82"><title>156.1M tokens on June 8th</title></rect>
 <rect x="716" y="58" width="11" height="11" rx="2" ry="2" fill="#c85a2b"><title>280.1M tokens on June 9th</title></rect>
 <rect x="716" y="72" width="11" height="11" rx="2" ry="2" fill="#f0aa82"><title>120M tokens on June 10th</title></rect>
 <rect x="716" y="86" width="11" height="11" rx="2" ry="2" fill="#fadcc9"><title>61M tokens on June 11th</title></rect>
@@ -360,7 +360,7 @@
 <rect x="730" y="114" width="11" height="11" rx="2" ry="2" fill="#ebedf0"><title>No tokens on June 20th</title></rect>
 <rect x="744" y="30" width="11" height="11" rx="2" ry="2" fill="#fadcc9"><title>44.2M tokens on June 21st</title></rect>
 <rect x="744" y="44" width="11" height="11" rx="2" ry="2" fill="#f0aa82"><title>92.4M tokens on June 22nd</title></rect>
-<rect x="744" y="58" width="11" height="11" rx="2" ry="2" fill="#c85a2b"><title>233.9M tokens on June 23rd</title></rect>
+<rect x="744" y="58" width="11" height="11" rx="2" ry="2" fill="#e07d4f"><title>233.9M tokens on June 23rd</title></rect>
 <rect x="744" y="72" width="11" height="11" rx="2" ry="2" fill="#f0aa82"><title>89.4M tokens on June 24th</title></rect>
 <rect x="744" y="86" width="11" height="11" rx="2" ry="2" fill="#e07d4f"><title>210.3M tokens on June 25th</title></rect>
 <rect x="744" y="100" width="11" height="11" rx="2" ry="2" fill="#e07d4f"><title>178.2M tokens on June 26th</title></rect>
@@ -368,7 +368,7 @@
 <rect x="758" y="30" width="11" height="11" rx="2" ry="2" fill="#ebedf0"><title>No tokens on June 28th</title></rect>
 <rect x="758" y="44" width="11" height="11" rx="2" ry="2" fill="#e07d4f"><title>193.1M tokens on June 29th</title></rect>
 <rect x="758" y="58" width="11" height="11" rx="2" ry="2" fill="#fadcc9"><title>71.2M tokens on June 30th</title></rect>
-<rect x="758" y="72" width="11" height="11" rx="2" ry="2" fill="#c85a2b"><title>306.4M tokens on July 1st</title></rect>
+<rect x="758" y="72" width="11" height="11" rx="2" ry="2" fill="#c85a2b"><title>321.9M tokens on July 1st</title></rect>
 <text x="30" y="26" font-size="10" fill="#57606a">Jun</text>
 <text x="44" y="26" font-size="10" fill="#57606a">Jul</text>
 <text x="100" y="26" font-size="10" fill="#57606a">Aug</text>
