@@ -327,7 +327,7 @@
 <rect x="728" y="57" width="12" height="12" rx="2" ry="2" fill="#f0aa82"><title>163M tokens on May 18th</title></rect>
 <rect x="728" y="72" width="12" height="12" rx="2" ry="2" fill="#f0aa82"><title>112.1M tokens on May 19th</title></rect>
 <rect x="728" y="87" width="12" height="12" rx="2" ry="2" fill="#c85a2b"><title>300.3M tokens on May 20th</title></rect>
-<rect x="728" y="102" width="12" height="12" rx="2" ry="2" fill="#e07d4f"><title>185M tokens on May 21st</title></rect>
+<rect x="728" y="102" width="12" height="12" rx="2" ry="2" fill="#f0aa82"><title>185M tokens on May 21st</title></rect>
 <rect x="728" y="117" width="12" height="12" rx="2" ry="2" fill="#f0aa82"><title>104.8M tokens on May 22nd</title></rect>
 <rect x="728" y="132" width="12" height="12" rx="2" ry="2" fill="#fadcc9"><title>32.1M tokens on May 23rd</title></rect>
 <rect x="743" y="42" width="12" height="12" rx="2" ry="2" fill="#fadcc9"><title>50.9M tokens on May 24th</title></rect>
@@ -346,7 +346,7 @@
 <rect x="758" y="132" width="12" height="12" rx="2" ry="2" fill="#f0aa82"><title>143.3M tokens on June 6th</title></rect>
 <rect x="773" y="42" width="12" height="12" rx="2" ry="2" fill="#f0aa82"><title>110.2M tokens on June 7th</title></rect>
 <rect x="773" y="57" width="12" height="12" rx="2" ry="2" fill="#f0aa82"><title>156.1M tokens on June 8th</title></rect>
-<rect x="773" y="72" width="12" height="12" rx="2" ry="2" fill="#c85a2b"><title>280.1M tokens on June 9th</title></rect>
+<rect x="773" y="72" width="12" height="12" rx="2" ry="2" fill="#e07d4f"><title>280.1M tokens on June 9th</title></rect>
 <rect x="773" y="87" width="12" height="12" rx="2" ry="2" fill="#f0aa82"><title>120M tokens on June 10th</title></rect>
 <rect x="773" y="102" width="12" height="12" rx="2" ry="2" fill="#fadcc9"><title>61M tokens on June 11th</title></rect>
 <rect x="773" y="117" width="12" height="12" rx="2" ry="2" fill="#f0aa82"><title>121.9M tokens on June 12th</title></rect>
@@ -359,7 +359,7 @@
 <rect x="788" y="117" width="12" height="12" rx="2" ry="2" fill="#fadcc9"><title>42.6M tokens on June 19th</title></rect>
 <rect x="788" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on June 20th</title></rect>
 <rect x="803" y="42" width="12" height="12" rx="2" ry="2" fill="#fadcc9"><title>44.2M tokens on June 21st</title></rect>
-<rect x="803" y="57" width="12" height="12" rx="2" ry="2" fill="#f0aa82"><title>92.4M tokens on June 22nd</title></rect>
+<rect x="803" y="57" width="12" height="12" rx="2" ry="2" fill="#fadcc9"><title>92.4M tokens on June 22nd</title></rect>
 <rect x="803" y="72" width="12" height="12" rx="2" ry="2" fill="#e07d4f"><title>233.9M tokens on June 23rd</title></rect>
 <rect x="803" y="87" width="12" height="12" rx="2" ry="2" fill="#fadcc9"><title>89.4M tokens on June 24th</title></rect>
 <rect x="803" y="102" width="12" height="12" rx="2" ry="2" fill="#e07d4f"><title>210.3M tokens on June 25th</title></rect>
@@ -368,7 +368,7 @@
 <rect x="818" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on June 28th</title></rect>
 <rect x="818" y="57" width="12" height="12" rx="2" ry="2" fill="#e07d4f"><title>193.1M tokens on June 29th</title></rect>
 <rect x="818" y="72" width="12" height="12" rx="2" ry="2" fill="#fadcc9"><title>71.2M tokens on June 30th</title></rect>
-<rect x="818" y="87" width="12" height="12" rx="2" ry="2" fill="#c85a2b"><title>368.5M tokens on July 1st</title></rect>
+<rect x="818" y="87" width="12" height="12" rx="2" ry="2" fill="#c85a2b"><title>383.5M tokens on July 1st</title></rect>
 <text x="38" y="37" font-size="12" fill="#57606a">Jun</text>
 <text x="53" y="37" font-size="12" fill="#57606a">Jul</text>
 <text x="113" y="37" font-size="12" fill="#57606a">Aug</text>
