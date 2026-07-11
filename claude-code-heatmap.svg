@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="843" height="177" viewBox="0 0 843 177" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
 <rect width="843" height="177" fill="#ffffff"/>
-<text x="38" y="16" font-size="15" font-weight="600" fill="#24292f">8.3B tokens in Claude Code · 2026</text>
+<text x="38" y="16" font-size="15" font-weight="600" fill="#24292f">8.5B tokens in Claude Code · 2026</text>
 <rect x="38" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on July 6th</title></rect>
 <rect x="38" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on July 7th</title></rect>
 <rect x="38" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on July 8th</title></rect>
@@ -370,7 +370,8 @@
 <rect x="818" y="72" width="12" height="12" rx="2" ry="2" fill="#fadcc9"><title>95.4M tokens on July 7th</title></rect>
 <rect x="818" y="87" width="12" height="12" rx="2" ry="2" fill="#e07d4f"><title>411M tokens on July 8th</title></rect>
 <rect x="818" y="102" width="12" height="12" rx="2" ry="2" fill="#c85a2b"><title>674.9M tokens on July 9th</title></rect>
-<rect x="818" y="117" width="12" height="12" rx="2" ry="2" fill="#e07d4f"><title>399.3M tokens on July 10th</title></rect>
+<rect x="818" y="117" width="12" height="12" rx="2" ry="2" fill="#e07d4f"><title>469.7M tokens on July 10th</title></rect>
+<rect x="818" y="132" width="12" height="12" rx="2" ry="2" fill="#fadcc9"><title>117.2M tokens on July 11th</title></rect>
 <text x="38" y="37" font-size="12" fill="#57606a">Jul</text>
 <text x="98" y="37" font-size="12" fill="#57606a">Aug</text>
 <text x="173" y="37" font-size="12" fill="#57606a">Sep</text>
