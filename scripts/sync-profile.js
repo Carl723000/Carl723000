@@ -103,7 +103,9 @@ async function syncProfile(options = {}) {
       runGit(['pull', '--quiet', '--rebase']);
     }
     const result = await generate({ repoRoot: REPO_ROOT });
-    for (const warning of result.warnings) console.warn(`Warning: ${warning}`);
+    // Data-quality notices belong in the normal job log. The launchd error log
+    // is reserved for actual failures so a healthy run stays unambiguous.
+    for (const warning of result.warnings) console.log(`Notice: ${warning}`);
 
     const changed = runGit(['diff', '--quiet', '--', HEATMAP_PATH], { allowFailure: true });
     if (changed.status !== 0 && changed.status !== 1) {
