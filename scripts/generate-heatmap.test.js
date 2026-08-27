@@ -259,11 +259,12 @@ test('SVG title and tooltips identify the combined provider totals', () => {
   assert.match(rendered.svg, /Codex 120/);
 });
 
-test('SVG uses non-zero daily quantiles for the four active intensity levels', () => {
+test('SVG uses six maximum-relative levels so real peaks keep the darkest colour', () => {
   const daily = combineDaily({
-    '2026-08-24': 1,
-    '2026-08-25': 10,
-    '2026-08-26': 100,
+    '2026-08-23': 1,
+    '2026-08-24': 100,
+    '2026-08-25': 200,
+    '2026-08-26': 500,
     '2026-08-27': 1_000,
   }, {});
   const rendered = renderHeatmapSvg(daily, {
@@ -271,8 +272,13 @@ test('SVG uses non-zero daily quantiles for the four active intensity levels', (
     timeZone: 'Asia/Hong_Kong',
   });
 
-  assert.match(rendered.svg, /fill="#e8def8"><title>1 tokens on August 24th/);
-  assert.match(rendered.svg, /fill="#c9b4ed"><title>10 tokens on August 25th/);
-  assert.match(rendered.svg, /fill="#9275d2"><title>100 tokens on August 26th/);
-  assert.match(rendered.svg, /fill="#5b419d"><title>1K tokens on August 27th/);
+  assert.match(rendered.svg, /fill="#eee8f8"><title>1 tokens on August 23rd/);
+  assert.match(rendered.svg, /fill="#d8c9f1"><title>100 tokens on August 24th/);
+  assert.match(rendered.svg, /fill="#bca5e6"><title>200 tokens on August 25th/);
+  assert.match(rendered.svg, /fill="#8668c7"><title>500 tokens on August 26th/);
+  assert.match(rendered.svg, /fill="#4f2f87"><title>1K tokens on August 27th/);
+  const paletteCells = rendered.svg.match(
+    /fill="#(?:ebedf0|eee8f8|d8c9f1|bca5e6|8668c7|4f2f87)"/g,
+  ) || [];
+  assert.ok(paletteCells.length > 6);
 });

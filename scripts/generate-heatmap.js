@@ -18,7 +18,11 @@ const path = require('node:path');
 const readline = require('node:readline');
 
 const DEFAULT_TIME_ZONE = 'Asia/Hong_Kong';
-const COMBINED_SCALE = ['#ebedf0', '#e8def8', '#c9b4ed', '#9275d2', '#5b419d'];
+const COMBINED_SCALE = ['#ebedf0', '#eee8f8', '#d8c9f1', '#bca5e6', '#8668c7', '#4f2f87'];
+// Five active bands are tied to fixed shares of the observed daily maximum.
+// Unlike quantiles, these thresholds do not brighten more days merely because
+// the history is dense: the darkest bands remain reserved for genuine peaks.
+const INTENSITY_RATIOS = [0.05, 0.15, 0.35, 0.65];
 const CLAUDE_COLOR = '#d97745';
 const CODEX_COLOR = '#3578c8';
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -74,15 +78,8 @@ function longDate(iso) {
 }
 
 function intensityThresholds(values) {
-  const active = values
-    .map(safeCount)
-    .filter((value) => value > 0)
-    .sort((left, right) => left - right);
-  if (active.length === 0) return [0, 0, 0];
-  if (active[0] === active[active.length - 1]) return [0, 0, 0];
-  return [0.25, 0.5, 0.75].map((quantile) => (
-    active[Math.floor((active.length - 1) * quantile)]
-  ));
+  const maximum = Math.max(0, ...values.map(safeCount));
+  return INTENSITY_RATIOS.map((ratio) => maximum * ratio);
 }
 
 function intensityBucket(value, thresholds) {
@@ -651,7 +648,7 @@ function renderHeatmapSvg(daily, options = {}) {
   const timeZone = options.timeZone || DEFAULT_TIME_ZONE;
   const weeks = Math.max(1, Math.min(53, options.weeks || 53));
   const today = options.endDateISO || dayKeyInZone(new Date(), timeZone);
-  const scale = options.scale?.length === 5 ? options.scale : COMBINED_SCALE;
+  const scale = options.scale?.length === 6 ? options.scale : COMBINED_SCALE;
   const gridEndSaturday = addDays(today, 6 - weekdayOf(today));
   const startISO = addDays(gridEndSaturday, -(weeks * 7 - 1));
   const gridStart = addDays(startISO, -weekdayOf(startISO));
@@ -732,13 +729,13 @@ function renderHeatmapSvg(daily, options = {}) {
   output.push(`<rect x="${leftPadding + 105}" y="${footerY - 8}" width="9" height="9" rx="2" fill="${CODEX_COLOR}"/>`);
   output.push(`<text x="${leftPadding + 118}" y="${footerY}" font-size="11" fill="#57606a">Codex ${compactNumber(codexTotal)}</text>`);
 
-  let legendX = leftPadding + gridWidth - (5 * step + 56);
+  let legendX = leftPadding + gridWidth - (scale.length * step + 56);
   output.push(`<text x="${legendX}" y="${footerY}" font-size="11" fill="#57606a">Less</text>`);
   legendX += 26;
-  for (let bucket = 0; bucket < 5; bucket += 1) {
+  for (let bucket = 0; bucket < scale.length; bucket += 1) {
     output.push(`<rect x="${legendX + bucket * step}" y="${footerY - 9}" width="${cellSize}" height="${cellSize}" rx="2" fill="${scale[bucket]}"/>`);
   }
-  output.push(`<text x="${legendX + 5 * step + 4}" y="${footerY}" font-size="11" fill="#57606a">More</text>`);
+  output.push(`<text x="${legendX + scale.length * step + 4}" y="${footerY}" font-size="11" fill="#57606a">More</text>`);
   output.push('</svg>');
   return {
     svg: output.join('\n'),
