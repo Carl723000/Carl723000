@@ -1,8 +1,8 @@
-### 🔥 My Claude Code token usage
+### 🔥 My Claude Code + Codex token usage
 
-[![Claude Code token heatmap](./claude-code-heatmap.svg)](https://carl723000.github.io/Carl723000/claude-code-heatmap.svg)
+[![Combined Claude Code and Codex token heatmap](./claude-code-heatmap.svg)](https://carl723000.github.io/Carl723000/claude-code-heatmap.svg)
 
-<sub>Auto-updated daily · generated locally from my own usage by the <a href="https://github.com/ClaudeCodeUsage/ClaudeCodeUsage">Claude Code Usage</a> VS Code extension · <a href="https://carl723000.github.io/Carl723000/claude-code-heatmap.svg">hover for per-day details ↗</a></sub>
+<sub>Auto-updated weekly from local aggregate usage only · no prompts, responses, project paths, or session ids are published · <a href="https://carl723000.github.io/Carl723000/claude-code-heatmap.svg">hover for the daily Claude + Codex split ↗</a></sub>
 
 <!--
 This README is my GitHub profile card; the usual profile (pins, contribution
@@ -13,7 +13,9 @@ Tooltips: GitHub renders README images as flat pictures (no hover), so the
 heatmap above links to the same SVG served via GitHub Pages, where the browser
 renders it natively and the per-day "N tokens on <date>" tooltips work.
 
-The heatmap is refreshed by a local scheduled task that runs
-scripts/generate-heatmap.js and pushes the updated SVG — the Claude Code logs
-it reads are local, so this can't run as a cloud GitHub Action.
+The heatmap is refreshed by a local macOS LaunchAgent that runs weekly. It
+aggregates Claude Code transcripts and existing Codex daily indexes, then
+pushes only this SVG. The source data stays local, so this cannot run as a
+cloud GitHub Action. See scripts/README.md for the privacy and token-counting
+contract.
 -->
