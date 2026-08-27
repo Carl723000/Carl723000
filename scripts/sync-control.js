@@ -53,6 +53,12 @@ function normalizeConfig(value = {}) {
   if (!['auto', 'ccu-index', 'codexbar'].includes(config.codexSource)) {
     throw new Error('codexSource must be auto, ccu-index, or codexbar');
   }
+  if (
+    config.claudeSnapshot !== undefined
+    && (typeof config.claudeSnapshot !== 'string' || !config.claudeSnapshot.trim())
+  ) {
+    throw new Error('claudeSnapshot must be a non-empty path when provided');
+  }
   return config;
 }
 
@@ -186,6 +192,7 @@ function showStatus() {
   const config = readConfig();
   console.log(`Weekly sync: ${isEnabled() ? 'ON' : 'OFF'}`);
   console.log(`Schedule: ${scheduleLabel(config)} (${config.timeZone})`);
+  console.log(`Claude source: ${config.claudeSnapshot || 'local fallback'}`);
   console.log(`Codex source: ${config.codexSource}`);
   console.log(`Log: ${LOG_PATH}`);
   console.log(`Errors: ${ERROR_LOG_PATH}`);

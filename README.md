@@ -2,7 +2,7 @@
 
 [![Combined Claude Code and Codex token heatmap](./claude-code-heatmap.svg)](https://carl723000.github.io/Carl723000/claude-code-heatmap.svg)
 
-<sub>Auto-updated weekly · <a href="https://marketplace.visualstudio.com/items?itemName=growthjack.claude-code-usage">Track yours with our Claude Code Usage VS Code extension ↗</a> · <a href="https://carl723000.github.io/Carl723000/claude-code-heatmap.svg">daily Claude + Codex details ↗</a></sub>
+<sub>Auto-updated weekly · <a href="https://marketplace.visualstudio.com/items?itemName=growthjack.claude-code-usage">Track Claude Code + Codex with our VS Code extension ↗</a> · <a href="https://carl723000.github.io/Carl723000/claude-code-heatmap.svg">daily Claude + Codex details ↗</a></sub>
 
 <!--
 This README is my GitHub profile card; the usual profile (pins, contribution

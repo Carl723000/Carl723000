@@ -4,12 +4,10 @@
 // Privacy boundary: only per-day aggregate token counts enter the SVG. Prompts,
 // responses, project paths, model names, session ids, and account data never do.
 //
-// Claude Code is read directly from its local JSONL transcripts. Codex daily
-// totals are read from local aggregate indexes already maintained by
-// ClaudeCodeUsage and/or CodexBar. On overlapping days the newer aggregate
-// source wins; an older source may fill earlier days outside the newer source's
-// coverage window. This keeps the scheduled job fast even with very large
-// Codex histories.
+// Claude Code can be loaded from the aggregate heatmap exported by the VS Code
+// extension; direct transcript scanning remains an explicit fallback. Codex
+// daily totals come from aggregate indexes already maintained by
+// ClaudeCodeUsage and/or CodexBar.
 
 'use strict';
 
@@ -75,9 +73,24 @@ function longDate(iso) {
   return `${MONTHS_FULL[Number(iso.slice(5, 7)) - 1]} ${ordinal(Number(iso.slice(8, 10)))}`;
 }
 
-function intensityBucket(value, maximum) {
-  if (value <= 0 || maximum <= 0) return 0;
-  return Math.min(4, Math.max(1, Math.ceil((value / maximum) * 4)));
+function intensityThresholds(values) {
+  const active = values
+    .map(safeCount)
+    .filter((value) => value > 0)
+    .sort((left, right) => left - right);
+  if (active.length === 0) return [0, 0, 0];
+  if (active[0] === active[active.length - 1]) return [0, 0, 0];
+  return [0.25, 0.5, 0.75].map((quantile) => (
+    active[Math.floor((active.length - 1) * quantile)]
+  ));
+}
+
+function intensityBucket(value, thresholds) {
+  if (value <= 0) return 0;
+  return 1 + thresholds.reduce(
+    (bucket, threshold) => bucket + (value > threshold ? 1 : 0),
+    0,
+  );
 }
 
 function dayKeyInZone(date, timeZone) {
@@ -98,6 +111,13 @@ function dayKeyInZone(date, timeZone) {
 
 function safeCount(value) {
   return typeof value === 'number' && Number.isFinite(value) ? Math.max(0, value) : 0;
+}
+
+function expandCompactNumber(value) {
+  const match = /^(\d+(?:\.\d+)?)([KMBT]?)$/.exec(String(value).trim());
+  if (!match) throw new Error(`Invalid compact token count: ${value}`);
+  const multipliers = { '': 1, K: 1e3, M: 1e6, B: 1e9, T: 1e12 };
+  return Number(match[1]) * multipliers[match[2]];
 }
 
 function addCount(daily, day, value) {
@@ -259,6 +279,56 @@ async function collectClaudeDaily(options = {}) {
   return { daily, stats };
 }
 
+async function loadClaudePluginHeatmapSource(snapshotPath, options = {}) {
+  const timeZone = options.timeZone || DEFAULT_TIME_ZONE;
+  const stat = await fsp.stat(snapshotPath);
+  const svg = await fsp.readFile(snapshotPath, 'utf8');
+  const endDateISO = options.snapshotEndDateISO
+    || dayKeyInZone(new Date(stat.mtimeMs), timeZone);
+  const gridEndSaturday = addDays(endDateISO, 6 - weekdayOf(endDateISO));
+  const startISO = addDays(gridEndSaturday, -(53 * 7 - 1));
+  const expectedCells = daysBetween(startISO, endDateISO) + 1;
+  const entries = [...svg.matchAll(
+    /<rect\b[^>]*><title>(No tokens|\d+(?:\.\d+)?[KMBT]? tokens) on ([^<]+)<\/title><\/rect>/g,
+  )];
+  if (entries.length !== expectedCells) {
+    throw new Error(
+      `Claude Code Usage heatmap has ${entries.length} daily cells; expected ${expectedCells} for ${endDateISO}`,
+    );
+  }
+
+  const daily = {};
+  let approximateTotal = 0;
+  for (let index = 0; index < entries.length; index += 1) {
+    const iso = addDays(startISO, index);
+    const [, label, dateLabel] = entries[index];
+    if (dateLabel !== longDate(iso)) {
+      throw new Error(
+        `Claude Code Usage heatmap date mismatch at ${iso}: found ${dateLabel}`,
+      );
+    }
+    const tokens = label === 'No tokens'
+      ? 0
+      : expandCompactNumber(label.slice(0, -' tokens'.length));
+    daily[iso] = tokens;
+    approximateTotal += tokens;
+  }
+
+  const titleMatch = />(\d+(?:\.\d+)?[KMBT]?) tokens in Claude Code\b/.exec(svg);
+  return {
+    daily,
+    stats: {
+      source: 'plugin-heatmap',
+      path: snapshotPath,
+      cells: entries.length,
+      activeDays: Object.values(daily).filter((value) => value > 0).length,
+      approximateTotal,
+      reportedTotal: titleMatch ? expandCompactNumber(titleMatch[1]) : null,
+      snapshotDay: endDateISO,
+    },
+  };
+}
+
 function stableNumber(value) {
   return typeof value === 'number' && Number.isFinite(value) ? value : null;
 }
@@ -354,6 +424,55 @@ async function loadCcuCodexIndexSource(indexPath, timeZone = DEFAULT_TIME_ZONE) 
   if (!index || typeof index !== 'object' || !index.files || typeof index.files !== 'object') {
     throw new Error(`Unsupported ClaudeCodeUsage Codex index: ${indexPath}`);
   }
+  const indexCoverage = index.coverage;
+  const isExplicitlyIncomplete = indexCoverage && (
+    indexCoverage.complete === false
+    || indexCoverage.period?.allTime?.complete === false
+  );
+  if (isExplicitlyIncomplete) {
+    const indexedFiles = safeCount(indexCoverage.indexedFiles);
+    const totalFiles = safeCount(indexCoverage.totalFiles);
+    const error = new Error(
+      `ClaudeCodeUsage Codex index is still building (${indexedFiles}/${totalFiles} files): ${indexPath}`,
+    );
+    error.code = 'CCU_INDEX_INCOMPLETE';
+    throw error;
+  }
+
+  const indexedTimeZone = indexCoverage?.period?.timeZone;
+  if (indexedTimeZone && indexedTimeZone !== timeZone) {
+    throw new Error(
+      `ClaudeCodeUsage Codex index uses ${indexedTimeZone}, not ${timeZone}: ${indexPath}`,
+    );
+  }
+
+  const aggregateDays = index.aggregate?.byDay;
+  if (aggregateDays && typeof aggregateDays === 'object') {
+    const daily = {};
+    for (const [day, total] of Object.entries(aggregateDays)) {
+      addCount(daily, day, safeCount(total?.inputTotal) + safeCount(total?.outputTotal));
+    }
+    if (Object.keys(daily).length === 0) {
+      throw new Error(`ClaudeCodeUsage Codex index has no daily data in ${timeZone}`);
+    }
+    return {
+      kind: 'ccu-index',
+      label: 'ClaudeCodeUsage Codex index',
+      path: indexPath,
+      mtimeMs: stat.mtimeMs,
+      daily,
+      coverage: coverageOf(daily),
+      details: {
+        canonicalFiles: safeCount(indexCoverage?.indexedFiles) || Object.keys(index.files).length,
+        exactDuplicates: safeCount(indexCoverage?.identity?.exactDuplicateFiles),
+        ambiguousGroups: safeCount(indexCoverage?.identity?.ambiguousSessionGroups),
+        identityComplete: indexCoverage?.identity?.complete !== false,
+        timezoneMismatches: 0,
+        authoritativeAggregate: true,
+      },
+    };
+  }
+
   const { canonicalKeys, exactDuplicates, ambiguousGroups } = canonicalCodexContributions(index.files);
   const daily = {};
   let timezoneMismatches = 0;
@@ -448,14 +567,19 @@ async function discoverCodexSources(options = {}) {
 
   const sources = [];
   const errors = [];
+  let incompleteIndexError;
   if (requested === 'auto' || requested === 'ccu-index') {
     for (const candidate of [...new Set(indexCandidates)]) {
       if (!(await fileExists(candidate))) continue;
       try {
         sources.push(await loadCcuCodexIndexSource(candidate, options.timeZone));
       } catch (error) {
+        if (error.code === 'CCU_INDEX_INCOMPLETE') incompleteIndexError ||= error;
         errors.push(`${candidate}: ${error.message}`);
       }
+    }
+    if (incompleteIndexError && !sources.some((source) => source.kind === 'ccu-index')) {
+      throw incompleteIndexError;
     }
   }
   if (requested === 'auto' || requested === 'codexbar') {
@@ -557,7 +681,8 @@ function renderHeatmapSvg(daily, options = {}) {
       bucket: 0,
     });
   }
-  for (const cell of cells) cell.bucket = intensityBucket(cell.value, maximum);
+  const thresholds = intensityThresholds(cells.map((cell) => cell.value));
+  for (const cell of cells) cell.bucket = intensityBucket(cell.value, thresholds);
 
   const cellSize = 12;
   const gap = 3;
@@ -571,8 +696,7 @@ function renderHeatmapSvg(daily, options = {}) {
   const footerHeight = 32;
   const width = leftPadding + gridWidth + 10;
   const height = topPadding + gridHeight + footerHeight;
-  const year = Number(today.slice(0, 4));
-  const title = options.title || `${compactNumber(total)} tokens in Claude Code + Codex · ${year}`;
+  const title = options.title || `${compactNumber(total)} AI coding tokens · Claude Code + Codex · trailing 12 months`;
 
   const output = [];
   output.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">`);
@@ -639,6 +763,7 @@ function parseArguments(argv) {
     const argument = argv[index];
     if (argument === '--output') args.output = argv[++index];
     else if (argument === '--timezone') args.timeZone = argv[++index];
+    else if (argument === '--claude-snapshot') args.claudeSnapshot = argv[++index];
     else if (argument === '--codex-source') args.codexSource = argv[++index];
     else if (argument === '--end-date') args.endDateISO = argv[++index];
     else if (argument === '--json') args.json = true;
@@ -665,12 +790,20 @@ async function generate(options = {}) {
   const timeZone = options.timeZone || localConfig.timeZone || process.env.CCU_HEATMAP_TZ || DEFAULT_TIME_ZONE;
   // Validate the timezone early instead of silently shifting dates.
   dayKeyInZone(new Date(), timeZone);
-  const claude = await collectClaudeDaily({
-    timeZone,
-    roots: options.claudeRoots,
-    environment: options.environment,
-    home: options.home,
-  });
+  const claudeSnapshot = options.claudeSnapshot
+    || localConfig.claudeSnapshot
+    || process.env.CCU_CLAUDE_HEATMAP_SVG;
+  const claude = claudeSnapshot
+    ? await loadClaudePluginHeatmapSource(claudeSnapshot, {
+      timeZone,
+      snapshotEndDateISO: options.snapshotEndDateISO,
+    })
+    : await collectClaudeDaily({
+      timeZone,
+      roots: options.claudeRoots,
+      environment: options.environment,
+      home: options.home,
+    });
   const codexSources = options.codexSources || await discoverCodexSources({
     timeZone,
     codexSource: options.codexSource || localConfig.codexSource,
@@ -686,9 +819,9 @@ async function generate(options = {}) {
   const output = options.output || path.join(repoRoot, 'claude-code-heatmap.svg');
   await writeAtomic(output, rendered.svg);
 
-  const logState = options.skipCodexLogFreshness
-    ? { newest: 0, files: 0 }
-    : await newestCodexLogMtime(options.home);
+  const logState = options.checkCodexLogFreshness
+    ? await newestCodexLogMtime(options.home)
+    : { newest: 0, files: 0 };
   const lagMs = logState.newest > 0 && codex.primary
     ? Math.max(0, logState.newest - codex.primary.mtimeMs)
     : 0;
@@ -724,7 +857,7 @@ async function generate(options = {}) {
 async function main() {
   const args = parseArguments(process.argv.slice(2));
   if (args.help) {
-    console.log('Usage: node scripts/generate-heatmap.js [--output FILE] [--timezone ZONE] [--codex-source auto|ccu-index|codexbar] [--end-date YYYY-MM-DD] [--json]');
+    console.log('Usage: node scripts/generate-heatmap.js [--output FILE] [--timezone ZONE] [--claude-snapshot SVG] [--codex-source auto|ccu-index|codexbar] [--end-date YYYY-MM-DD] [--json]');
     return;
   }
   const result = await generate(args);
@@ -734,7 +867,11 @@ async function main() {
   }
   console.log(`Heatmap written: ${result.output}`);
   console.log(`Trailing-year tokens: ${compactNumber(result.summary.total)} (Claude ${compactNumber(result.summary.claudeTotal)} + Codex ${compactNumber(result.summary.codexTotal)})`);
-  console.log(`Claude scan: ${result.claudeStats.files} files, ${result.claudeStats.lines} lines, ${result.claudeStats.duplicatesSkipped + result.claudeStats.duplicatesReplaced} duplicate records reconciled`);
+  if (result.claudeStats.source === 'plugin-heatmap') {
+    console.log(`Claude source: VS Code plugin heatmap (${result.claudeStats.snapshotDay})`);
+  } else {
+    console.log(`Claude scan: ${result.claudeStats.files} files, ${result.claudeStats.lines} lines, ${result.claudeStats.duplicatesSkipped + result.claudeStats.duplicatesReplaced} duplicate records reconciled`);
+  }
   console.log(`Codex sources: ${result.codexSources.map((source) => `${source.kind} ${source.coverage.firstDay}…${source.coverage.lastDay}`).join('; ')}`);
   for (const warning of result.warnings) console.warn(`Warning: ${warning}`);
 }
@@ -756,6 +893,7 @@ module.exports = {
   discoverCodexSources,
   generate,
   loadCcuCodexIndexSource,
+  loadClaudePluginHeatmapSource,
   loadCodexBarSource,
   mergeCodexSources,
   renderHeatmapSvg,

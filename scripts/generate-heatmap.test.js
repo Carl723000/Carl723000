@@ -12,6 +12,7 @@ const {
   combineDaily,
   dayKeyInZone,
   loadCcuCodexIndexSource,
+  loadClaudePluginHeatmapSource,
   loadCodexBarSource,
   mergeCodexSources,
   renderHeatmapSvg,
@@ -119,6 +120,99 @@ test('CCU Codex index excludes an exact active/archive duplicate without double-
   assert.equal(source.details.exactDuplicates, 1);
 });
 
+test('CCU Codex index rejects an explicitly incomplete checkpoint', async (t) => {
+  const root = await temporaryDirectory(t);
+  const indexPath = path.join(root, 'codex-index-v1.json');
+  await fsp.writeFile(indexPath, JSON.stringify({
+    files: {},
+    aggregate: { byDay: { '2026-08-27': { inputTotal: 100, outputTotal: 20 } } },
+    coverage: {
+      indexedFiles: 1,
+      totalFiles: 2,
+      complete: false,
+      identity: { complete: false },
+      period: { timeZone: 'Asia/Hong_Kong', allTime: { complete: false } },
+    },
+  }));
+
+  await assert.rejects(
+    loadCcuCodexIndexSource(indexPath, 'Asia/Hong_Kong'),
+    /index is still building \(1\/2 files\)/,
+  );
+});
+
+test('CCU Codex index prefers its complete lineage-reconciled daily aggregate', async (t) => {
+  const root = await temporaryDirectory(t);
+  const indexPath = path.join(root, 'codex-index-v1.json');
+  await fsp.writeFile(indexPath, JSON.stringify({
+    files: {
+      raw: codexContribution('sessions', 'raw-session', 1_000, 200),
+    },
+    aggregate: { byDay: { '2026-08-27': { inputTotal: 100, outputTotal: 20 } } },
+    coverage: {
+      indexedFiles: 1,
+      totalFiles: 1,
+      complete: true,
+      identity: { complete: true, exactDuplicateFiles: 0, ambiguousSessionGroups: 0 },
+      period: { timeZone: 'Asia/Hong_Kong', allTime: { complete: true } },
+    },
+  }));
+
+  const source = await loadCcuCodexIndexSource(indexPath, 'Asia/Hong_Kong');
+  assert.deepEqual(source.daily, { '2026-08-27': 120 });
+  assert.equal(source.details.authoritativeAggregate, true);
+});
+
+test('CCU Codex index keeps the plugin aggregate after the file scan completes even with unresolved identity groups', async (t) => {
+  const root = await temporaryDirectory(t);
+  const indexPath = path.join(root, 'codex-index-v1.json');
+  await fsp.writeFile(indexPath, JSON.stringify({
+    files: {},
+    aggregate: { byDay: { '2026-08-27': { inputTotal: 100, outputTotal: 20 } } },
+    coverage: {
+      indexedFiles: 2,
+      totalFiles: 2,
+      complete: true,
+      identity: { complete: false, exactDuplicateFiles: 0, ambiguousSessionGroups: 5 },
+      period: { timeZone: 'Asia/Hong_Kong', allTime: { complete: true } },
+    },
+  }));
+
+  const source = await loadCcuCodexIndexSource(indexPath, 'Asia/Hong_Kong');
+  assert.deepEqual(source.daily, { '2026-08-27': 120 });
+  assert.equal(source.details.identityComplete, false);
+  assert.equal(source.details.ambiguousGroups, 5);
+});
+
+test('Claude plugin heatmap snapshot is accepted as aggregate input without reading transcripts', async (t) => {
+  const root = await temporaryDirectory(t);
+  const snapshotPath = path.join(root, 'claude-code-heatmap.svg');
+  const endDateISO = '2026-08-27';
+  const startISO = '2025-08-24';
+  const cells = [];
+  for (let iso = startISO; iso <= endDateISO;) {
+    const date = new Date(`${iso}T00:00:00Z`);
+    const month = date.toLocaleString('en-US', { month: 'long', timeZone: 'UTC' });
+    const number = date.getUTCDate();
+    const lastTwo = number % 100;
+    const suffix = lastTwo >= 11 && lastTwo <= 13
+      ? 'th'
+      : (['th', 'st', 'nd', 'rd'][Math.min(number % 10, 4)] || 'th');
+    const label = iso === endDateISO ? '1.2M tokens' : 'No tokens';
+    cells.push(`<rect><title>${label} on ${month} ${number}${suffix}</title></rect>`);
+    iso = new Date(date.getTime() + 86_400_000).toISOString().slice(0, 10);
+  }
+  await fsp.writeFile(snapshotPath, `<svg><text>1.2M tokens in Claude Code · 2026</text>${cells.join('')}</svg>`);
+
+  const source = await loadClaudePluginHeatmapSource(snapshotPath, {
+    timeZone: 'Asia/Hong_Kong',
+    snapshotEndDateISO: endDateISO,
+  });
+  assert.equal(source.daily[endDateISO], 1_200_000);
+  assert.equal(source.stats.cells, 369);
+  assert.equal(source.stats.source, 'plugin-heatmap');
+});
+
 test('CodexBar source reads input plus output only', async (t) => {
   const root = await temporaryDirectory(t);
   const databasePath = path.join(root, 'cost-usage.sqlite');
@@ -159,8 +253,26 @@ test('SVG title and tooltips identify the combined provider totals', () => {
     endDateISO: '2026-08-27',
     timeZone: 'Asia/Hong_Kong',
   });
-  assert.match(rendered.svg, /145 tokens in Claude Code \+ Codex · 2026/);
+  assert.match(rendered.svg, /145 AI coding tokens · Claude Code \+ Codex · trailing 12 months/);
   assert.match(rendered.svg, /145 tokens on August 27th \(Claude 25 \+ Codex 120\)/);
   assert.match(rendered.svg, /Claude 25/);
   assert.match(rendered.svg, /Codex 120/);
+});
+
+test('SVG uses non-zero daily quantiles for the four active intensity levels', () => {
+  const daily = combineDaily({
+    '2026-08-24': 1,
+    '2026-08-25': 10,
+    '2026-08-26': 100,
+    '2026-08-27': 1_000,
+  }, {});
+  const rendered = renderHeatmapSvg(daily, {
+    endDateISO: '2026-08-27',
+    timeZone: 'Asia/Hong_Kong',
+  });
+
+  assert.match(rendered.svg, /fill="#e8def8"><title>1 tokens on August 24th/);
+  assert.match(rendered.svg, /fill="#c9b4ed"><title>10 tokens on August 25th/);
+  assert.match(rendered.svg, /fill="#9275d2"><title>100 tokens on August 26th/);
+  assert.match(rendered.svg, /fill="#5b419d"><title>1K tokens on August 27th/);
 });

@@ -1,6 +1,7 @@
 {
   "timeZone": "Asia/Hong_Kong",
   "codexSource": "auto",
+  "claudeSnapshot": "/absolute/path/to/claude-code-heatmap.svg",
   "weekday": 0,
   "hour": 20,
   "minute": 0

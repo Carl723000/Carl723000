@@ -26,6 +26,7 @@ test('schedule parsing accepts names and validates time', () => {
 
 test('config rejects an invalid Codex source', () => {
   assert.throws(() => normalizeConfig({ codexSource: 'raw-logs' }), /codexSource/);
+  assert.throws(() => normalizeConfig({ claudeSnapshot: '  ' }), /claudeSnapshot/);
 });
 
 test('plist contains the weekly schedule and escapes local paths', () => {

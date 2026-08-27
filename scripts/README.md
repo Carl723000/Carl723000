@@ -28,6 +28,9 @@ The example is `scripts/sync-config.example.json`.
 
 ## Counting contract
 
+- **Plugin snapshot mode:** pass `--claude-snapshot <SVG>` (or set
+  `CCU_CLAUDE_HEATMAP_SVG`) to consume the aggregate heatmap exported by the
+  VS Code extension. This mode does not reopen Claude transcripts.
 - **Claude Code:** scan local `~/.claude/projects/**/*.jsonl`; count input,
   output, cache-write, and cache-read tokens. Records sharing the same
   message/request identity are reconciled by keeping the larger record, which
