@@ -1,395 +1,391 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="843" height="179" viewBox="0 0 843 179" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
 <rect width="843" height="179" fill="#ffffff"/>
-<text x="38" y="16" font-size="15" font-weight="600" fill="#24292f">22.1B AI coding tokens · Claude Code + Codex · trailing 12 months</text>
-<rect x="38" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on August 24th</title></rect>
-<rect x="38" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on August 25th</title></rect>
-<rect x="38" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on August 26th</title></rect>
-<rect x="38" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on August 27th</title></rect>
-<rect x="38" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on August 28th</title></rect>
-<rect x="38" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on August 29th</title></rect>
-<rect x="38" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on August 30th</title></rect>
-<rect x="53" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on August 31st</title></rect>
-<rect x="53" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 1st</title></rect>
-<rect x="53" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 2nd</title></rect>
-<rect x="53" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 3rd</title></rect>
-<rect x="53" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 4th</title></rect>
-<rect x="53" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 5th</title></rect>
-<rect x="53" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 6th</title></rect>
-<rect x="68" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 7th</title></rect>
-<rect x="68" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 8th</title></rect>
-<rect x="68" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 9th</title></rect>
-<rect x="68" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 10th</title></rect>
-<rect x="68" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 11th</title></rect>
-<rect x="68" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 12th</title></rect>
-<rect x="68" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 13th</title></rect>
-<rect x="83" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 14th</title></rect>
-<rect x="83" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 15th</title></rect>
-<rect x="83" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 16th</title></rect>
-<rect x="83" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 17th</title></rect>
-<rect x="83" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 18th</title></rect>
-<rect x="83" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 19th</title></rect>
-<rect x="83" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 20th</title></rect>
-<rect x="98" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 21st</title></rect>
-<rect x="98" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 22nd</title></rect>
-<rect x="98" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 23rd</title></rect>
-<rect x="98" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 24th</title></rect>
-<rect x="98" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 25th</title></rect>
-<rect x="98" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 26th</title></rect>
-<rect x="98" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 27th</title></rect>
-<rect x="113" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 28th</title></rect>
-<rect x="113" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 29th</title></rect>
-<rect x="113" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 30th</title></rect>
-<rect x="113" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 1st</title></rect>
-<rect x="113" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 2nd</title></rect>
-<rect x="113" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 3rd</title></rect>
-<rect x="113" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 4th</title></rect>
-<rect x="128" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 5th</title></rect>
-<rect x="128" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 6th</title></rect>
-<rect x="128" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 7th</title></rect>
-<rect x="128" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 8th</title></rect>
-<rect x="128" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 9th</title></rect>
-<rect x="128" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 10th</title></rect>
-<rect x="128" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 11th</title></rect>
-<rect x="143" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 12th</title></rect>
-<rect x="143" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 13th</title></rect>
-<rect x="143" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 14th</title></rect>
-<rect x="143" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 15th</title></rect>
-<rect x="143" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 16th</title></rect>
-<rect x="143" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 17th</title></rect>
-<rect x="143" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 18th</title></rect>
-<rect x="158" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 19th</title></rect>
-<rect x="158" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 20th</title></rect>
-<rect x="158" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 21st</title></rect>
-<rect x="158" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 22nd</title></rect>
-<rect x="158" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 23rd</title></rect>
-<rect x="158" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 24th</title></rect>
-<rect x="158" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 25th</title></rect>
-<rect x="173" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 26th</title></rect>
-<rect x="173" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 27th</title></rect>
-<rect x="173" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 28th</title></rect>
-<rect x="173" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 29th</title></rect>
-<rect x="173" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 30th</title></rect>
-<rect x="173" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 31st</title></rect>
-<rect x="173" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 1st</title></rect>
-<rect x="188" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 2nd</title></rect>
-<rect x="188" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 3rd</title></rect>
-<rect x="188" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 4th</title></rect>
-<rect x="188" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 5th</title></rect>
-<rect x="188" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 6th</title></rect>
-<rect x="188" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 7th</title></rect>
-<rect x="188" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 8th</title></rect>
-<rect x="203" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 9th</title></rect>
-<rect x="203" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 10th</title></rect>
-<rect x="203" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 11th</title></rect>
-<rect x="203" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 12th</title></rect>
-<rect x="203" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 13th</title></rect>
-<rect x="203" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 14th</title></rect>
-<rect x="203" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 15th</title></rect>
-<rect x="218" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 16th</title></rect>
-<rect x="218" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 17th</title></rect>
-<rect x="218" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 18th</title></rect>
-<rect x="218" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 19th</title></rect>
-<rect x="218" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 20th</title></rect>
-<rect x="218" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 21st</title></rect>
-<rect x="218" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 22nd</title></rect>
-<rect x="233" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 23rd</title></rect>
-<rect x="233" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 24th</title></rect>
-<rect x="233" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 25th</title></rect>
-<rect x="233" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 26th</title></rect>
-<rect x="233" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 27th</title></rect>
-<rect x="233" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 28th</title></rect>
-<rect x="233" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 29th</title></rect>
-<rect x="248" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 30th</title></rect>
-<rect x="248" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 1st</title></rect>
-<rect x="248" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 2nd</title></rect>
-<rect x="248" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 3rd</title></rect>
-<rect x="248" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 4th</title></rect>
-<rect x="248" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 5th</title></rect>
-<rect x="248" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 6th</title></rect>
-<rect x="263" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 7th</title></rect>
-<rect x="263" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 8th</title></rect>
-<rect x="263" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 9th</title></rect>
-<rect x="263" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 10th</title></rect>
-<rect x="263" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 11th</title></rect>
-<rect x="263" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 12th</title></rect>
-<rect x="263" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 13th</title></rect>
-<rect x="278" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 14th</title></rect>
-<rect x="278" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 15th</title></rect>
-<rect x="278" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 16th</title></rect>
-<rect x="278" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 17th</title></rect>
-<rect x="278" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 18th</title></rect>
-<rect x="278" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 19th</title></rect>
-<rect x="278" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 20th</title></rect>
-<rect x="293" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 21st</title></rect>
-<rect x="293" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 22nd</title></rect>
-<rect x="293" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 23rd</title></rect>
-<rect x="293" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 24th</title></rect>
-<rect x="293" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 25th</title></rect>
-<rect x="293" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 26th</title></rect>
-<rect x="293" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 27th</title></rect>
-<rect x="308" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 28th</title></rect>
-<rect x="308" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 29th</title></rect>
-<rect x="308" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 30th</title></rect>
-<rect x="308" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 31st</title></rect>
-<rect x="308" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 1st</title></rect>
-<rect x="308" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 2nd</title></rect>
-<rect x="308" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 3rd</title></rect>
-<rect x="323" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 4th</title></rect>
-<rect x="323" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 5th</title></rect>
-<rect x="323" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 6th</title></rect>
-<rect x="323" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 7th</title></rect>
-<rect x="323" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 8th</title></rect>
-<rect x="323" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 9th</title></rect>
-<rect x="323" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 10th</title></rect>
-<rect x="338" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 11th</title></rect>
-<rect x="338" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 12th</title></rect>
-<rect x="338" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 13th</title></rect>
-<rect x="338" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 14th</title></rect>
-<rect x="338" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 15th</title></rect>
-<rect x="338" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 16th</title></rect>
-<rect x="338" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 17th</title></rect>
-<rect x="353" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 18th</title></rect>
-<rect x="353" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 19th</title></rect>
-<rect x="353" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 20th</title></rect>
-<rect x="353" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 21st</title></rect>
-<rect x="353" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 22nd</title></rect>
-<rect x="353" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 23rd</title></rect>
-<rect x="353" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 24th</title></rect>
-<rect x="368" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 25th</title></rect>
-<rect x="368" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 26th</title></rect>
-<rect x="368" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 27th</title></rect>
-<rect x="368" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 28th</title></rect>
-<rect x="368" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 29th</title></rect>
-<rect x="368" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 30th</title></rect>
-<rect x="368" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 31st</title></rect>
-<rect x="383" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 1st</title></rect>
-<rect x="383" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 2nd</title></rect>
-<rect x="383" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 3rd</title></rect>
-<rect x="383" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 4th</title></rect>
-<rect x="383" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 5th</title></rect>
-<rect x="383" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 6th</title></rect>
-<rect x="383" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 7th</title></rect>
-<rect x="398" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 8th</title></rect>
-<rect x="398" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 9th</title></rect>
-<rect x="398" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 10th</title></rect>
-<rect x="398" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 11th</title></rect>
-<rect x="398" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 12th</title></rect>
-<rect x="398" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 13th</title></rect>
-<rect x="398" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 14th</title></rect>
-<rect x="413" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 15th</title></rect>
-<rect x="413" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 16th</title></rect>
-<rect x="413" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 17th</title></rect>
-<rect x="413" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 18th</title></rect>
-<rect x="413" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 19th</title></rect>
-<rect x="413" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 20th</title></rect>
-<rect x="413" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 21st</title></rect>
-<rect x="428" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 22nd</title></rect>
-<rect x="428" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 23rd</title></rect>
-<rect x="428" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 24th</title></rect>
-<rect x="428" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 25th</title></rect>
-<rect x="428" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 26th</title></rect>
-<rect x="428" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 27th</title></rect>
-<rect x="428" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 28th</title></rect>
-<rect x="443" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 1st</title></rect>
-<rect x="443" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 2nd</title></rect>
-<rect x="443" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 3rd</title></rect>
-<rect x="443" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 4th</title></rect>
-<rect x="443" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 5th</title></rect>
-<rect x="443" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 6th</title></rect>
-<rect x="443" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 7th</title></rect>
-<rect x="458" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 8th</title></rect>
-<rect x="458" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 9th</title></rect>
-<rect x="458" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 10th</title></rect>
-<rect x="458" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 11th</title></rect>
-<rect x="458" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 12th</title></rect>
-<rect x="458" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 13th</title></rect>
-<rect x="458" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 14th</title></rect>
-<rect x="473" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 15th</title></rect>
-<rect x="473" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 16th</title></rect>
-<rect x="473" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 17th</title></rect>
-<rect x="473" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 18th</title></rect>
-<rect x="473" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 19th</title></rect>
-<rect x="473" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 20th</title></rect>
-<rect x="473" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 21st</title></rect>
-<rect x="488" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 22nd</title></rect>
-<rect x="488" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 23rd</title></rect>
-<rect x="488" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 24th</title></rect>
-<rect x="488" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 25th</title></rect>
-<rect x="488" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 26th</title></rect>
-<rect x="488" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 27th</title></rect>
-<rect x="488" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 28th</title></rect>
-<rect x="503" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 29th</title></rect>
-<rect x="503" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 30th</title></rect>
-<rect x="503" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 31st</title></rect>
-<rect x="503" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 1st</title></rect>
-<rect x="503" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 2nd</title></rect>
-<rect x="503" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 3rd</title></rect>
-<rect x="503" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 4th</title></rect>
-<rect x="518" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 5th</title></rect>
-<rect x="518" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 6th</title></rect>
-<rect x="518" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 7th</title></rect>
-<rect x="518" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 8th</title></rect>
-<rect x="518" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 9th</title></rect>
-<rect x="518" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 10th</title></rect>
-<rect x="518" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 11th</title></rect>
-<rect x="533" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 12th</title></rect>
-<rect x="533" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 13th</title></rect>
-<rect x="533" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 14th</title></rect>
-<rect x="533" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 15th</title></rect>
-<rect x="533" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 16th</title></rect>
-<rect x="533" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 17th</title></rect>
-<rect x="533" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 18th</title></rect>
-<rect x="548" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 19th</title></rect>
-<rect x="548" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 20th</title></rect>
-<rect x="548" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 21st</title></rect>
-<rect x="548" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 22nd</title></rect>
-<rect x="548" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 23rd</title></rect>
-<rect x="548" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 24th</title></rect>
-<rect x="548" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 25th</title></rect>
-<rect x="563" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 26th</title></rect>
-<rect x="563" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 27th</title></rect>
-<rect x="563" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 28th</title></rect>
-<rect x="563" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 29th</title></rect>
-<rect x="563" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 30th</title></rect>
-<rect x="563" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on May 1st</title></rect>
-<rect x="563" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on May 2nd</title></rect>
-<rect x="578" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on May 3rd</title></rect>
-<rect x="578" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on May 4th</title></rect>
-<rect x="578" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on May 5th</title></rect>
-<rect x="578" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on May 6th</title></rect>
-<rect x="578" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on May 7th</title></rect>
-<rect x="578" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on May 8th</title></rect>
-<rect x="578" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on May 9th</title></rect>
-<rect x="593" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on May 10th</title></rect>
-<rect x="593" y="57" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>57K tokens on May 11th (Claude 57K + Codex 0)</title></rect>
-<rect x="593" y="72" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>2.5M tokens on May 12th (Claude 2.5M + Codex 0)</title></rect>
-<rect x="593" y="87" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>6.2M tokens on May 13th (Claude 6.2M + Codex 0)</title></rect>
-<rect x="593" y="102" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>5.1M tokens on May 14th (Claude 5.1M + Codex 0)</title></rect>
-<rect x="593" y="117" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>40.3M tokens on May 15th (Claude 40.3M + Codex 0)</title></rect>
-<rect x="593" y="132" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>19.2M tokens on May 16th (Claude 19.2M + Codex 0)</title></rect>
-<rect x="608" y="42" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>72.6M tokens on May 17th (Claude 72.6M + Codex 0)</title></rect>
-<rect x="608" y="57" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>93M tokens on May 18th (Claude 93M + Codex 0)</title></rect>
-<rect x="608" y="72" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>63.9M tokens on May 19th (Claude 63.9M + Codex 0)</title></rect>
-<rect x="608" y="87" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>165.8M tokens on May 20th (Claude 165.8M + Codex 0)</title></rect>
-<rect x="608" y="102" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>56.5M tokens on May 21st (Claude 56.5M + Codex 0)</title></rect>
-<rect x="608" y="117" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>34.4M tokens on May 22nd (Claude 34.4M + Codex 0)</title></rect>
-<rect x="608" y="132" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>11.6M tokens on May 23rd (Claude 11.6M + Codex 0)</title></rect>
-<rect x="623" y="42" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>21M tokens on May 24th (Claude 21M + Codex 0)</title></rect>
-<rect x="623" y="57" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>36.5M tokens on May 25th (Claude 36.5M + Codex 0)</title></rect>
-<rect x="623" y="72" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>40M tokens on May 26th (Claude 40M + Codex 0)</title></rect>
-<rect x="623" y="87" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>37.3M tokens on May 27th (Claude 37.3M + Codex 0)</title></rect>
-<rect x="623" y="102" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>14.8M tokens on May 28th (Claude 14.8M + Codex 0)</title></rect>
-<rect x="623" y="117" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>18.1M tokens on May 29th (Claude 18.1M + Codex 0)</title></rect>
-<rect x="623" y="132" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>11.7M tokens on May 30th (Claude 11.7M + Codex 0)</title></rect>
-<rect x="638" y="42" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>3.2M tokens on May 31st (Claude 3.2M + Codex 0)</title></rect>
-<rect x="638" y="57" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>15.5M tokens on June 1st (Claude 15.5M + Codex 0)</title></rect>
-<rect x="638" y="72" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>104.5M tokens on June 2nd (Claude 104.5M + Codex 0)</title></rect>
-<rect x="638" y="87" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>41.2M tokens on June 3rd (Claude 41.2M + Codex 0)</title></rect>
-<rect x="638" y="102" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>51.1M tokens on June 4th (Claude 51.1M + Codex 0)</title></rect>
-<rect x="638" y="117" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>81M tokens on June 5th (Claude 81M + Codex 0)</title></rect>
-<rect x="638" y="132" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>68.8M tokens on June 6th (Claude 68.8M + Codex 0)</title></rect>
-<rect x="653" y="42" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>46.5M tokens on June 7th (Claude 46.5M + Codex 0)</title></rect>
-<rect x="653" y="57" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>69.3M tokens on June 8th (Claude 69.3M + Codex 0)</title></rect>
-<rect x="653" y="72" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>144.1M tokens on June 9th (Claude 144.1M + Codex 0)</title></rect>
-<rect x="653" y="87" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>55M tokens on June 10th (Claude 55M + Codex 0)</title></rect>
-<rect x="653" y="102" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>30.2M tokens on June 11th (Claude 30.2M + Codex 0)</title></rect>
-<rect x="653" y="117" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>50.7M tokens on June 12th (Claude 50.7M + Codex 0)</title></rect>
-<rect x="653" y="132" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>50.2M tokens on June 13th (Claude 50.2M + Codex 0)</title></rect>
-<rect x="668" y="42" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>75M tokens on June 14th (Claude 75M + Codex 0)</title></rect>
-<rect x="668" y="57" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>61.9M tokens on June 15th (Claude 61.9M + Codex 0)</title></rect>
-<rect x="668" y="72" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>22.8M tokens on June 16th (Claude 22.8M + Codex 0)</title></rect>
-<rect x="668" y="87" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>14.4M tokens on June 17th (Claude 14.4M + Codex 0)</title></rect>
-<rect x="668" y="102" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>6.5M tokens on June 18th (Claude 6.5M + Codex 0)</title></rect>
-<rect x="668" y="117" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>16M tokens on June 19th (Claude 16M + Codex 0)</title></rect>
-<rect x="668" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on June 20th</title></rect>
-<rect x="683" y="42" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>20.7M tokens on June 21st (Claude 20.7M + Codex 0)</title></rect>
-<rect x="683" y="57" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>39.4M tokens on June 22nd (Claude 39.4M + Codex 0)</title></rect>
-<rect x="683" y="72" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>116.1M tokens on June 23rd (Claude 116.1M + Codex 0)</title></rect>
-<rect x="683" y="87" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>45.9M tokens on June 24th (Claude 45.9M + Codex 0)</title></rect>
-<rect x="683" y="102" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>113.2M tokens on June 25th (Claude 113.2M + Codex 0)</title></rect>
-<rect x="683" y="117" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>76M tokens on June 26th (Claude 76M + Codex 0)</title></rect>
-<rect x="683" y="132" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>44.6M tokens on June 27th (Claude 44.6M + Codex 0)</title></rect>
-<rect x="698" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on June 28th</title></rect>
-<rect x="698" y="57" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>95.8M tokens on June 29th (Claude 95.8M + Codex 0)</title></rect>
-<rect x="698" y="72" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>30.1M tokens on June 30th (Claude 30.1M + Codex 0)</title></rect>
-<rect x="698" y="87" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>169.8M tokens on July 1st (Claude 169.8M + Codex 0)</title></rect>
-<rect x="698" y="102" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>189.9M tokens on July 2nd (Claude 189.9M + Codex 0)</title></rect>
-<rect x="698" y="117" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>165.9M tokens on July 3rd (Claude 165.9M + Codex 0)</title></rect>
-<rect x="698" y="132" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>108.7M tokens on July 4th (Claude 108.7M + Codex 0)</title></rect>
-<rect x="713" y="42" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>162.4M tokens on July 5th (Claude 162.4M + Codex 0)</title></rect>
-<rect x="713" y="57" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>35.3M tokens on July 6th (Claude 35.3M + Codex 0)</title></rect>
-<rect x="713" y="72" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>47M tokens on July 7th (Claude 47M + Codex 0)</title></rect>
-<rect x="713" y="87" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>123.3M tokens on July 8th (Claude 123.3M + Codex 0)</title></rect>
-<rect x="713" y="102" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>205M tokens on July 9th (Claude 205M + Codex 0)</title></rect>
-<rect x="713" y="117" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>228.6M tokens on July 10th (Claude 228.6M + Codex 0)</title></rect>
-<rect x="713" y="132" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>63.7M tokens on July 11th (Claude 63.7M + Codex 0)</title></rect>
-<rect x="728" y="42" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>103.2M tokens on July 12th (Claude 103.2M + Codex 0)</title></rect>
-<rect x="728" y="57" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>87.1M tokens on July 13th (Claude 83.1M + Codex 4M)</title></rect>
-<rect x="728" y="72" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>68.9M tokens on July 14th (Claude 17.7M + Codex 51.2M)</title></rect>
-<rect x="728" y="87" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>218.5M tokens on July 15th (Claude 0 + Codex 218.5M)</title></rect>
-<rect x="728" y="102" width="12" height="12" rx="2" ry="2" fill="#8668c7"><title>642.8M tokens on July 16th (Claude 158.8K + Codex 642.6M)</title></rect>
-<rect x="728" y="117" width="12" height="12" rx="2" ry="2" fill="#4f2f87"><title>1.6B tokens on July 17th (Claude 0 + Codex 1.6B)</title></rect>
-<rect x="728" y="132" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>305M tokens on July 18th (Claude 0 + Codex 305M)</title></rect>
-<rect x="743" y="42" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>462.8M tokens on July 19th (Claude 0 + Codex 462.8M)</title></rect>
-<rect x="743" y="57" width="12" height="12" rx="2" ry="2" fill="#8668c7"><title>708.8M tokens on July 20th (Claude 0 + Codex 708.8M)</title></rect>
-<rect x="743" y="72" width="12" height="12" rx="2" ry="2" fill="#4f2f87"><title>1.1B tokens on July 21st (Claude 0 + Codex 1.1B)</title></rect>
-<rect x="743" y="87" width="12" height="12" rx="2" ry="2" fill="#8668c7"><title>898.3M tokens on July 22nd (Claude 345K + Codex 897.9M)</title></rect>
-<rect x="743" y="102" width="12" height="12" rx="2" ry="2" fill="#8668c7"><title>625.5M tokens on July 23rd (Claude 0 + Codex 625.5M)</title></rect>
-<rect x="743" y="117" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>67.6M tokens on July 24th (Claude 0 + Codex 67.6M)</title></rect>
-<rect x="743" y="132" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>38.3M tokens on July 25th (Claude 1.3M + Codex 37M)</title></rect>
-<rect x="758" y="42" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>26.8M tokens on July 26th (Claude 0 + Codex 26.8M)</title></rect>
-<rect x="758" y="57" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>90.3M tokens on July 27th (Claude 0 + Codex 90.3M)</title></rect>
-<rect x="758" y="72" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>147.6M tokens on July 28th (Claude 0 + Codex 147.6M)</title></rect>
-<rect x="758" y="87" width="12" height="12" rx="2" ry="2" fill="#8668c7"><title>678M tokens on July 29th (Claude 0 + Codex 678M)</title></rect>
-<rect x="758" y="102" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>274.8M tokens on July 30th (Claude 0 + Codex 274.8M)</title></rect>
-<rect x="758" y="117" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>247.2M tokens on July 31st (Claude 0 + Codex 247.2M)</title></rect>
-<rect x="758" y="132" width="12" height="12" rx="2" ry="2" fill="#8668c7"><title>808.2M tokens on August 1st (Claude 0 + Codex 808.2M)</title></rect>
-<rect x="773" y="42" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>361.2M tokens on August 2nd (Claude 0 + Codex 361.2M)</title></rect>
-<rect x="773" y="57" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>293.5M tokens on August 3rd (Claude 0 + Codex 293.5M)</title></rect>
-<rect x="773" y="72" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>346M tokens on August 4th (Claude 0 + Codex 346M)</title></rect>
-<rect x="773" y="87" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>232.1M tokens on August 5th (Claude 0 + Codex 232.1M)</title></rect>
-<rect x="773" y="102" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>26.3M tokens on August 6th (Claude 0 + Codex 26.3M)</title></rect>
-<rect x="773" y="117" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>36M tokens on August 7th (Claude 0 + Codex 36M)</title></rect>
-<rect x="773" y="132" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>28.6M tokens on August 8th (Claude 0 + Codex 28.6M)</title></rect>
-<rect x="788" y="42" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>21.2M tokens on August 9th (Claude 1.6M + Codex 19.6M)</title></rect>
-<rect x="788" y="57" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>122.3M tokens on August 10th (Claude 0 + Codex 122.3M)</title></rect>
-<rect x="788" y="72" width="12" height="12" rx="2" ry="2" fill="#8668c7"><title>658.1M tokens on August 11th (Claude 36.8M + Codex 621.3M)</title></rect>
-<rect x="788" y="87" width="12" height="12" rx="2" ry="2" fill="#4f2f87"><title>1.3B tokens on August 12th (Claude 0 + Codex 1.3B)</title></rect>
-<rect x="788" y="102" width="12" height="12" rx="2" ry="2" fill="#4f2f87"><title>1.3B tokens on August 13th (Claude 5.8M + Codex 1.3B)</title></rect>
-<rect x="788" y="117" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>363.9M tokens on August 14th (Claude 2.4M + Codex 361.5M)</title></rect>
-<rect x="788" y="132" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>113.3M tokens on August 15th (Claude 2.7M + Codex 110.6M)</title></rect>
-<rect x="803" y="42" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>323.1M tokens on August 16th (Claude 19.2M + Codex 303.9M)</title></rect>
-<rect x="803" y="57" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>124.5M tokens on August 17th (Claude 65.5M + Codex 59M)</title></rect>
-<rect x="803" y="72" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>372.4M tokens on August 18th (Claude 10.9M + Codex 361.5M)</title></rect>
-<rect x="803" y="87" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>112.7M tokens on August 19th (Claude 1M + Codex 111.7M)</title></rect>
-<rect x="803" y="102" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>199.6M tokens on August 20th (Claude 3.4M + Codex 196.2M)</title></rect>
-<rect x="803" y="117" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>272.6M tokens on August 21st (Claude 18M + Codex 254.6M)</title></rect>
-<rect x="803" y="132" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>489.4M tokens on August 22nd (Claude 102.6M + Codex 386.8M)</title></rect>
-<rect x="818" y="42" width="12" height="12" rx="2" ry="2" fill="#8668c7"><title>754.2M tokens on August 23rd (Claude 19.6M + Codex 734.6M)</title></rect>
-<rect x="818" y="57" width="12" height="12" rx="2" ry="2" fill="#8668c7"><title>612.7M tokens on August 24th (Claude 14.6M + Codex 598.1M)</title></rect>
-<rect x="818" y="72" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>161.4M tokens on August 25th (Claude 0 + Codex 161.4M)</title></rect>
-<rect x="818" y="87" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>257.6M tokens on August 26th (Claude 9.4M + Codex 248.2M)</title></rect>
-<rect x="818" y="102" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>297.2M tokens on August 27th (Claude 0 + Codex 297.2M)</title></rect>
+<text x="38" y="16" font-size="15" font-weight="600" fill="#24292f">27.4B AI coding tokens · Claude Code + Codex · trailing 12 months</text>
+<rect x="38" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on August 31st</title></rect>
+<rect x="38" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 1st</title></rect>
+<rect x="38" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 2nd</title></rect>
+<rect x="38" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 3rd</title></rect>
+<rect x="38" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 4th</title></rect>
+<rect x="38" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 5th</title></rect>
+<rect x="38" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 6th</title></rect>
+<rect x="53" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 7th</title></rect>
+<rect x="53" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 8th</title></rect>
+<rect x="53" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 9th</title></rect>
+<rect x="53" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 10th</title></rect>
+<rect x="53" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 11th</title></rect>
+<rect x="53" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 12th</title></rect>
+<rect x="53" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 13th</title></rect>
+<rect x="68" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 14th</title></rect>
+<rect x="68" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 15th</title></rect>
+<rect x="68" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 16th</title></rect>
+<rect x="68" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 17th</title></rect>
+<rect x="68" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 18th</title></rect>
+<rect x="68" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 19th</title></rect>
+<rect x="68" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 20th</title></rect>
+<rect x="83" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 21st</title></rect>
+<rect x="83" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 22nd</title></rect>
+<rect x="83" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 23rd</title></rect>
+<rect x="83" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 24th</title></rect>
+<rect x="83" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 25th</title></rect>
+<rect x="83" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 26th</title></rect>
+<rect x="83" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 27th</title></rect>
+<rect x="98" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 28th</title></rect>
+<rect x="98" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 29th</title></rect>
+<rect x="98" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on September 30th</title></rect>
+<rect x="98" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 1st</title></rect>
+<rect x="98" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 2nd</title></rect>
+<rect x="98" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 3rd</title></rect>
+<rect x="98" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 4th</title></rect>
+<rect x="113" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 5th</title></rect>
+<rect x="113" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 6th</title></rect>
+<rect x="113" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 7th</title></rect>
+<rect x="113" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 8th</title></rect>
+<rect x="113" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 9th</title></rect>
+<rect x="113" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 10th</title></rect>
+<rect x="113" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 11th</title></rect>
+<rect x="128" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 12th</title></rect>
+<rect x="128" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 13th</title></rect>
+<rect x="128" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 14th</title></rect>
+<rect x="128" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 15th</title></rect>
+<rect x="128" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 16th</title></rect>
+<rect x="128" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 17th</title></rect>
+<rect x="128" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 18th</title></rect>
+<rect x="143" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 19th</title></rect>
+<rect x="143" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 20th</title></rect>
+<rect x="143" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 21st</title></rect>
+<rect x="143" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 22nd</title></rect>
+<rect x="143" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 23rd</title></rect>
+<rect x="143" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 24th</title></rect>
+<rect x="143" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 25th</title></rect>
+<rect x="158" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 26th</title></rect>
+<rect x="158" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 27th</title></rect>
+<rect x="158" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 28th</title></rect>
+<rect x="158" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 29th</title></rect>
+<rect x="158" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 30th</title></rect>
+<rect x="158" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on October 31st</title></rect>
+<rect x="158" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 1st</title></rect>
+<rect x="173" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 2nd</title></rect>
+<rect x="173" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 3rd</title></rect>
+<rect x="173" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 4th</title></rect>
+<rect x="173" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 5th</title></rect>
+<rect x="173" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 6th</title></rect>
+<rect x="173" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 7th</title></rect>
+<rect x="173" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 8th</title></rect>
+<rect x="188" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 9th</title></rect>
+<rect x="188" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 10th</title></rect>
+<rect x="188" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 11th</title></rect>
+<rect x="188" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 12th</title></rect>
+<rect x="188" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 13th</title></rect>
+<rect x="188" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 14th</title></rect>
+<rect x="188" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 15th</title></rect>
+<rect x="203" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 16th</title></rect>
+<rect x="203" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 17th</title></rect>
+<rect x="203" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 18th</title></rect>
+<rect x="203" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 19th</title></rect>
+<rect x="203" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 20th</title></rect>
+<rect x="203" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 21st</title></rect>
+<rect x="203" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 22nd</title></rect>
+<rect x="218" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 23rd</title></rect>
+<rect x="218" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 24th</title></rect>
+<rect x="218" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 25th</title></rect>
+<rect x="218" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 26th</title></rect>
+<rect x="218" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 27th</title></rect>
+<rect x="218" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 28th</title></rect>
+<rect x="218" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 29th</title></rect>
+<rect x="233" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on November 30th</title></rect>
+<rect x="233" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 1st</title></rect>
+<rect x="233" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 2nd</title></rect>
+<rect x="233" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 3rd</title></rect>
+<rect x="233" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 4th</title></rect>
+<rect x="233" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 5th</title></rect>
+<rect x="233" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 6th</title></rect>
+<rect x="248" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 7th</title></rect>
+<rect x="248" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 8th</title></rect>
+<rect x="248" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 9th</title></rect>
+<rect x="248" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 10th</title></rect>
+<rect x="248" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 11th</title></rect>
+<rect x="248" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 12th</title></rect>
+<rect x="248" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 13th</title></rect>
+<rect x="263" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 14th</title></rect>
+<rect x="263" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 15th</title></rect>
+<rect x="263" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 16th</title></rect>
+<rect x="263" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 17th</title></rect>
+<rect x="263" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 18th</title></rect>
+<rect x="263" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 19th</title></rect>
+<rect x="263" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 20th</title></rect>
+<rect x="278" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 21st</title></rect>
+<rect x="278" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 22nd</title></rect>
+<rect x="278" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 23rd</title></rect>
+<rect x="278" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 24th</title></rect>
+<rect x="278" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 25th</title></rect>
+<rect x="278" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 26th</title></rect>
+<rect x="278" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 27th</title></rect>
+<rect x="293" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 28th</title></rect>
+<rect x="293" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 29th</title></rect>
+<rect x="293" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 30th</title></rect>
+<rect x="293" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on December 31st</title></rect>
+<rect x="293" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 1st</title></rect>
+<rect x="293" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 2nd</title></rect>
+<rect x="293" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 3rd</title></rect>
+<rect x="308" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 4th</title></rect>
+<rect x="308" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 5th</title></rect>
+<rect x="308" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 6th</title></rect>
+<rect x="308" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 7th</title></rect>
+<rect x="308" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 8th</title></rect>
+<rect x="308" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 9th</title></rect>
+<rect x="308" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 10th</title></rect>
+<rect x="323" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 11th</title></rect>
+<rect x="323" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 12th</title></rect>
+<rect x="323" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 13th</title></rect>
+<rect x="323" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 14th</title></rect>
+<rect x="323" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 15th</title></rect>
+<rect x="323" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 16th</title></rect>
+<rect x="323" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 17th</title></rect>
+<rect x="338" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 18th</title></rect>
+<rect x="338" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 19th</title></rect>
+<rect x="338" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 20th</title></rect>
+<rect x="338" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 21st</title></rect>
+<rect x="338" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 22nd</title></rect>
+<rect x="338" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 23rd</title></rect>
+<rect x="338" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 24th</title></rect>
+<rect x="353" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 25th</title></rect>
+<rect x="353" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 26th</title></rect>
+<rect x="353" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 27th</title></rect>
+<rect x="353" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 28th</title></rect>
+<rect x="353" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 29th</title></rect>
+<rect x="353" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 30th</title></rect>
+<rect x="353" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on January 31st</title></rect>
+<rect x="368" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 1st</title></rect>
+<rect x="368" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 2nd</title></rect>
+<rect x="368" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 3rd</title></rect>
+<rect x="368" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 4th</title></rect>
+<rect x="368" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 5th</title></rect>
+<rect x="368" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 6th</title></rect>
+<rect x="368" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 7th</title></rect>
+<rect x="383" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 8th</title></rect>
+<rect x="383" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 9th</title></rect>
+<rect x="383" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 10th</title></rect>
+<rect x="383" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 11th</title></rect>
+<rect x="383" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 12th</title></rect>
+<rect x="383" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 13th</title></rect>
+<rect x="383" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 14th</title></rect>
+<rect x="398" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 15th</title></rect>
+<rect x="398" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 16th</title></rect>
+<rect x="398" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 17th</title></rect>
+<rect x="398" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 18th</title></rect>
+<rect x="398" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 19th</title></rect>
+<rect x="398" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 20th</title></rect>
+<rect x="398" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 21st</title></rect>
+<rect x="413" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 22nd</title></rect>
+<rect x="413" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 23rd</title></rect>
+<rect x="413" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 24th</title></rect>
+<rect x="413" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 25th</title></rect>
+<rect x="413" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 26th</title></rect>
+<rect x="413" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 27th</title></rect>
+<rect x="413" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on February 28th</title></rect>
+<rect x="428" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 1st</title></rect>
+<rect x="428" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 2nd</title></rect>
+<rect x="428" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 3rd</title></rect>
+<rect x="428" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 4th</title></rect>
+<rect x="428" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 5th</title></rect>
+<rect x="428" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 6th</title></rect>
+<rect x="428" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 7th</title></rect>
+<rect x="443" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 8th</title></rect>
+<rect x="443" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 9th</title></rect>
+<rect x="443" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 10th</title></rect>
+<rect x="443" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 11th</title></rect>
+<rect x="443" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 12th</title></rect>
+<rect x="443" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 13th</title></rect>
+<rect x="443" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 14th</title></rect>
+<rect x="458" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 15th</title></rect>
+<rect x="458" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 16th</title></rect>
+<rect x="458" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 17th</title></rect>
+<rect x="458" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 18th</title></rect>
+<rect x="458" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 19th</title></rect>
+<rect x="458" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 20th</title></rect>
+<rect x="458" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 21st</title></rect>
+<rect x="473" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 22nd</title></rect>
+<rect x="473" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 23rd</title></rect>
+<rect x="473" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 24th</title></rect>
+<rect x="473" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 25th</title></rect>
+<rect x="473" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 26th</title></rect>
+<rect x="473" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 27th</title></rect>
+<rect x="473" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 28th</title></rect>
+<rect x="488" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 29th</title></rect>
+<rect x="488" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 30th</title></rect>
+<rect x="488" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on March 31st</title></rect>
+<rect x="488" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 1st</title></rect>
+<rect x="488" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 2nd</title></rect>
+<rect x="488" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 3rd</title></rect>
+<rect x="488" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 4th</title></rect>
+<rect x="503" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 5th</title></rect>
+<rect x="503" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 6th</title></rect>
+<rect x="503" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 7th</title></rect>
+<rect x="503" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 8th</title></rect>
+<rect x="503" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 9th</title></rect>
+<rect x="503" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 10th</title></rect>
+<rect x="503" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 11th</title></rect>
+<rect x="518" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 12th</title></rect>
+<rect x="518" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 13th</title></rect>
+<rect x="518" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 14th</title></rect>
+<rect x="518" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 15th</title></rect>
+<rect x="518" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 16th</title></rect>
+<rect x="518" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 17th</title></rect>
+<rect x="518" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 18th</title></rect>
+<rect x="533" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 19th</title></rect>
+<rect x="533" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 20th</title></rect>
+<rect x="533" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 21st</title></rect>
+<rect x="533" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 22nd</title></rect>
+<rect x="533" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 23rd</title></rect>
+<rect x="533" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 24th</title></rect>
+<rect x="533" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 25th</title></rect>
+<rect x="548" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 26th</title></rect>
+<rect x="548" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 27th</title></rect>
+<rect x="548" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 28th</title></rect>
+<rect x="548" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 29th</title></rect>
+<rect x="548" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on April 30th</title></rect>
+<rect x="548" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on May 1st</title></rect>
+<rect x="548" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on May 2nd</title></rect>
+<rect x="563" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on May 3rd</title></rect>
+<rect x="563" y="57" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on May 4th</title></rect>
+<rect x="563" y="72" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on May 5th</title></rect>
+<rect x="563" y="87" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on May 6th</title></rect>
+<rect x="563" y="102" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on May 7th</title></rect>
+<rect x="563" y="117" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on May 8th</title></rect>
+<rect x="563" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on May 9th</title></rect>
+<rect x="578" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on May 10th</title></rect>
+<rect x="578" y="57" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>57K tokens on May 11th (Claude 57K + Codex 0)</title></rect>
+<rect x="578" y="72" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>2.5M tokens on May 12th (Claude 2.5M + Codex 0)</title></rect>
+<rect x="578" y="87" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>6.2M tokens on May 13th (Claude 6.2M + Codex 0)</title></rect>
+<rect x="578" y="102" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>5.1M tokens on May 14th (Claude 5.1M + Codex 0)</title></rect>
+<rect x="578" y="117" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>40.3M tokens on May 15th (Claude 40.3M + Codex 0)</title></rect>
+<rect x="578" y="132" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>19.2M tokens on May 16th (Claude 19.2M + Codex 0)</title></rect>
+<rect x="593" y="42" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>72.6M tokens on May 17th (Claude 72.6M + Codex 0)</title></rect>
+<rect x="593" y="57" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>93M tokens on May 18th (Claude 93M + Codex 0)</title></rect>
+<rect x="593" y="72" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>63.9M tokens on May 19th (Claude 63.9M + Codex 0)</title></rect>
+<rect x="593" y="87" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>165.8M tokens on May 20th (Claude 165.8M + Codex 0)</title></rect>
+<rect x="593" y="102" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>56.5M tokens on May 21st (Claude 56.5M + Codex 0)</title></rect>
+<rect x="593" y="117" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>34.4M tokens on May 22nd (Claude 34.4M + Codex 0)</title></rect>
+<rect x="593" y="132" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>11.6M tokens on May 23rd (Claude 11.6M + Codex 0)</title></rect>
+<rect x="608" y="42" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>21M tokens on May 24th (Claude 21M + Codex 0)</title></rect>
+<rect x="608" y="57" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>36.5M tokens on May 25th (Claude 36.5M + Codex 0)</title></rect>
+<rect x="608" y="72" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>40M tokens on May 26th (Claude 40M + Codex 0)</title></rect>
+<rect x="608" y="87" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>37.3M tokens on May 27th (Claude 37.3M + Codex 0)</title></rect>
+<rect x="608" y="102" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>14.8M tokens on May 28th (Claude 14.8M + Codex 0)</title></rect>
+<rect x="608" y="117" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>18.1M tokens on May 29th (Claude 18.1M + Codex 0)</title></rect>
+<rect x="608" y="132" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>11.7M tokens on May 30th (Claude 11.7M + Codex 0)</title></rect>
+<rect x="623" y="42" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>3.2M tokens on May 31st (Claude 3.2M + Codex 0)</title></rect>
+<rect x="623" y="57" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>15.5M tokens on June 1st (Claude 15.5M + Codex 0)</title></rect>
+<rect x="623" y="72" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>104.5M tokens on June 2nd (Claude 104.5M + Codex 0)</title></rect>
+<rect x="623" y="87" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>41.2M tokens on June 3rd (Claude 41.2M + Codex 0)</title></rect>
+<rect x="623" y="102" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>51.1M tokens on June 4th (Claude 51.1M + Codex 0)</title></rect>
+<rect x="623" y="117" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>81M tokens on June 5th (Claude 81M + Codex 0)</title></rect>
+<rect x="623" y="132" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>68.8M tokens on June 6th (Claude 68.8M + Codex 0)</title></rect>
+<rect x="638" y="42" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>46.5M tokens on June 7th (Claude 46.5M + Codex 0)</title></rect>
+<rect x="638" y="57" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>69.3M tokens on June 8th (Claude 69.3M + Codex 0)</title></rect>
+<rect x="638" y="72" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>144.1M tokens on June 9th (Claude 144.1M + Codex 0)</title></rect>
+<rect x="638" y="87" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>55M tokens on June 10th (Claude 55M + Codex 0)</title></rect>
+<rect x="638" y="102" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>30.2M tokens on June 11th (Claude 30.2M + Codex 0)</title></rect>
+<rect x="638" y="117" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>50.7M tokens on June 12th (Claude 50.7M + Codex 0)</title></rect>
+<rect x="638" y="132" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>50.2M tokens on June 13th (Claude 50.2M + Codex 0)</title></rect>
+<rect x="653" y="42" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>75M tokens on June 14th (Claude 75M + Codex 0)</title></rect>
+<rect x="653" y="57" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>61.9M tokens on June 15th (Claude 61.9M + Codex 0)</title></rect>
+<rect x="653" y="72" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>22.8M tokens on June 16th (Claude 22.8M + Codex 0)</title></rect>
+<rect x="653" y="87" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>14.4M tokens on June 17th (Claude 14.4M + Codex 0)</title></rect>
+<rect x="653" y="102" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>6.5M tokens on June 18th (Claude 6.5M + Codex 0)</title></rect>
+<rect x="653" y="117" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>16M tokens on June 19th (Claude 16M + Codex 0)</title></rect>
+<rect x="653" y="132" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on June 20th</title></rect>
+<rect x="668" y="42" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>20.7M tokens on June 21st (Claude 20.7M + Codex 0)</title></rect>
+<rect x="668" y="57" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>39.4M tokens on June 22nd (Claude 39.4M + Codex 0)</title></rect>
+<rect x="668" y="72" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>116.1M tokens on June 23rd (Claude 116.1M + Codex 0)</title></rect>
+<rect x="668" y="87" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>45.9M tokens on June 24th (Claude 45.9M + Codex 0)</title></rect>
+<rect x="668" y="102" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>113.2M tokens on June 25th (Claude 113.2M + Codex 0)</title></rect>
+<rect x="668" y="117" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>76M tokens on June 26th (Claude 76M + Codex 0)</title></rect>
+<rect x="668" y="132" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>44.6M tokens on June 27th (Claude 44.6M + Codex 0)</title></rect>
+<rect x="683" y="42" width="12" height="12" rx="2" ry="2" fill="#ebedf0"><title>No tokens on June 28th</title></rect>
+<rect x="683" y="57" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>95.8M tokens on June 29th (Claude 95.8M + Codex 0)</title></rect>
+<rect x="683" y="72" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>30.1M tokens on June 30th (Claude 30.1M + Codex 0)</title></rect>
+<rect x="683" y="87" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>169.8M tokens on July 1st (Claude 169.8M + Codex 0)</title></rect>
+<rect x="683" y="102" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>189.9M tokens on July 2nd (Claude 189.9M + Codex 0)</title></rect>
+<rect x="683" y="117" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>165.9M tokens on July 3rd (Claude 165.9M + Codex 0)</title></rect>
+<rect x="683" y="132" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>108.7M tokens on July 4th (Claude 108.7M + Codex 0)</title></rect>
+<rect x="698" y="42" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>162.4M tokens on July 5th (Claude 162.4M + Codex 0)</title></rect>
+<rect x="698" y="57" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>35.3M tokens on July 6th (Claude 35.3M + Codex 0)</title></rect>
+<rect x="698" y="72" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>47M tokens on July 7th (Claude 47M + Codex 0)</title></rect>
+<rect x="698" y="87" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>123.3M tokens on July 8th (Claude 123.3M + Codex 0)</title></rect>
+<rect x="698" y="102" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>205M tokens on July 9th (Claude 205M + Codex 0)</title></rect>
+<rect x="698" y="117" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>228.6M tokens on July 10th (Claude 228.6M + Codex 0)</title></rect>
+<rect x="698" y="132" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>63.7M tokens on July 11th (Claude 63.7M + Codex 0)</title></rect>
+<rect x="713" y="42" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>103.2M tokens on July 12th (Claude 103.2M + Codex 0)</title></rect>
+<rect x="713" y="57" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>87.1M tokens on July 13th (Claude 83.1M + Codex 4M)</title></rect>
+<rect x="713" y="72" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>68.9M tokens on July 14th (Claude 17.7M + Codex 51.2M)</title></rect>
+<rect x="713" y="87" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>218.5M tokens on July 15th (Claude 0 + Codex 218.5M)</title></rect>
+<rect x="713" y="102" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>642.8M tokens on July 16th (Claude 158.8K + Codex 642.6M)</title></rect>
+<rect x="713" y="117" width="12" height="12" rx="2" ry="2" fill="#8668c7"><title>1.6B tokens on July 17th (Claude 0 + Codex 1.6B)</title></rect>
+<rect x="713" y="132" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>305M tokens on July 18th (Claude 0 + Codex 305M)</title></rect>
+<rect x="728" y="42" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>462.8M tokens on July 19th (Claude 0 + Codex 462.8M)</title></rect>
+<rect x="728" y="57" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>708.8M tokens on July 20th (Claude 0 + Codex 708.8M)</title></rect>
+<rect x="728" y="72" width="12" height="12" rx="2" ry="2" fill="#8668c7"><title>1.1B tokens on July 21st (Claude 0 + Codex 1.1B)</title></rect>
+<rect x="728" y="87" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>898.3M tokens on July 22nd (Claude 345K + Codex 897.9M)</title></rect>
+<rect x="728" y="102" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>625.5M tokens on July 23rd (Claude 0 + Codex 625.5M)</title></rect>
+<rect x="728" y="117" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>67.6M tokens on July 24th (Claude 0 + Codex 67.6M)</title></rect>
+<rect x="728" y="132" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>38.3M tokens on July 25th (Claude 1.3M + Codex 37M)</title></rect>
+<rect x="743" y="42" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>26.8M tokens on July 26th (Claude 0 + Codex 26.8M)</title></rect>
+<rect x="743" y="57" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>90.3M tokens on July 27th (Claude 0 + Codex 90.3M)</title></rect>
+<rect x="743" y="72" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>147.6M tokens on July 28th (Claude 0 + Codex 147.6M)</title></rect>
+<rect x="743" y="87" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>678M tokens on July 29th (Claude 0 + Codex 678M)</title></rect>
+<rect x="743" y="102" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>274.8M tokens on July 30th (Claude 0 + Codex 274.8M)</title></rect>
+<rect x="743" y="117" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>247.2M tokens on July 31st (Claude 0 + Codex 247.2M)</title></rect>
+<rect x="743" y="132" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>808.2M tokens on August 1st (Claude 0 + Codex 808.2M)</title></rect>
+<rect x="758" y="42" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>361.2M tokens on August 2nd (Claude 0 + Codex 361.2M)</title></rect>
+<rect x="758" y="57" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>293.5M tokens on August 3rd (Claude 0 + Codex 293.5M)</title></rect>
+<rect x="758" y="72" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>346M tokens on August 4th (Claude 0 + Codex 346M)</title></rect>
+<rect x="758" y="87" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>232.1M tokens on August 5th (Claude 0 + Codex 232.1M)</title></rect>
+<rect x="758" y="102" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>26.3M tokens on August 6th (Claude 0 + Codex 26.3M)</title></rect>
+<rect x="758" y="117" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>36M tokens on August 7th (Claude 0 + Codex 36M)</title></rect>
+<rect x="758" y="132" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>28.6M tokens on August 8th (Claude 0 + Codex 28.6M)</title></rect>
+<rect x="773" y="42" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>21.2M tokens on August 9th (Claude 1.6M + Codex 19.6M)</title></rect>
+<rect x="773" y="57" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>122.3M tokens on August 10th (Claude 0 + Codex 122.3M)</title></rect>
+<rect x="773" y="72" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>658.1M tokens on August 11th (Claude 36.8M + Codex 621.3M)</title></rect>
+<rect x="773" y="87" width="12" height="12" rx="2" ry="2" fill="#8668c7"><title>1.3B tokens on August 12th (Claude 0 + Codex 1.3B)</title></rect>
+<rect x="773" y="102" width="12" height="12" rx="2" ry="2" fill="#8668c7"><title>1.3B tokens on August 13th (Claude 5.8M + Codex 1.3B)</title></rect>
+<rect x="773" y="117" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>363.9M tokens on August 14th (Claude 2.4M + Codex 361.5M)</title></rect>
+<rect x="773" y="132" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>113.3M tokens on August 15th (Claude 2.7M + Codex 110.6M)</title></rect>
+<rect x="788" y="42" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>323.1M tokens on August 16th (Claude 19.2M + Codex 303.9M)</title></rect>
+<rect x="788" y="57" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>124.5M tokens on August 17th (Claude 65.5M + Codex 59M)</title></rect>
+<rect x="788" y="72" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>372.4M tokens on August 18th (Claude 10.9M + Codex 361.5M)</title></rect>
+<rect x="788" y="87" width="12" height="12" rx="2" ry="2" fill="#eee8f8"><title>112.7M tokens on August 19th (Claude 1M + Codex 111.7M)</title></rect>
+<rect x="788" y="102" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>199.6M tokens on August 20th (Claude 3.4M + Codex 196.2M)</title></rect>
+<rect x="788" y="117" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>272.6M tokens on August 21st (Claude 18M + Codex 254.6M)</title></rect>
+<rect x="788" y="132" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>489.4M tokens on August 22nd (Claude 102.6M + Codex 386.8M)</title></rect>
+<rect x="803" y="42" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>754.2M tokens on August 23rd (Claude 19.6M + Codex 734.6M)</title></rect>
+<rect x="803" y="57" width="12" height="12" rx="2" ry="2" fill="#bca5e6"><title>612.7M tokens on August 24th (Claude 14.6M + Codex 598.1M)</title></rect>
+<rect x="803" y="72" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>161.4M tokens on August 25th (Claude 0 + Codex 161.4M)</title></rect>
+<rect x="803" y="87" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>257.6M tokens on August 26th (Claude 9.4M + Codex 248.2M)</title></rect>
+<rect x="803" y="102" width="12" height="12" rx="2" ry="2" fill="#4f2f87"><title>2.9B tokens on August 27th (Claude 0 + Codex 2.9B)</title></rect>
+<rect x="803" y="117" width="12" height="12" rx="2" ry="2" fill="#d8c9f1"><title>415.6M tokens on August 28th (Claude 0 + Codex 415.6M)</title></rect>
+<rect x="803" y="132" width="12" height="12" rx="2" ry="2" fill="#8668c7"><title>1.2B tokens on August 29th (Claude 0 + Codex 1.2B)</title></rect>
+<rect x="818" y="42" width="12" height="12" rx="2" ry="2" fill="#8668c7"><title>1.1B tokens on August 30th (Claude 0 + Codex 1.1B)</title></rect>
 <text x="38" y="37" font-size="12" fill="#57606a">Aug</text>
-<text x="68" y="37" font-size="12" fill="#57606a">Sep</text>
-<text x="128" y="37" font-size="12" fill="#57606a">Oct</text>
-<text x="188" y="37" font-size="12" fill="#57606a">Nov</text>
-<text x="263" y="37" font-size="12" fill="#57606a">Dec</text>
-<text x="323" y="37" font-size="12" fill="#57606a">Jan</text>
-<text x="383" y="37" font-size="12" fill="#57606a">Feb</text>
-<text x="443" y="37" font-size="12" fill="#57606a">Mar</text>
-<text x="518" y="37" font-size="12" fill="#57606a">Apr</text>
-<text x="578" y="37" font-size="12" fill="#57606a">May</text>
-<text x="653" y="37" font-size="12" fill="#57606a">Jun</text>
-<text x="713" y="37" font-size="12" fill="#57606a">Jul</text>
-<text x="773" y="37" font-size="12" fill="#57606a">Aug</text>
+<text x="53" y="37" font-size="12" fill="#57606a">Sep</text>
+<text x="113" y="37" font-size="12" fill="#57606a">Oct</text>
+<text x="173" y="37" font-size="12" fill="#57606a">Nov</text>
+<text x="248" y="37" font-size="12" fill="#57606a">Dec</text>
+<text x="308" y="37" font-size="12" fill="#57606a">Jan</text>
+<text x="368" y="37" font-size="12" fill="#57606a">Feb</text>
+<text x="428" y="37" font-size="12" fill="#57606a">Mar</text>
+<text x="503" y="37" font-size="12" fill="#57606a">Apr</text>
+<text x="563" y="37" font-size="12" fill="#57606a">May</text>
+<text x="638" y="37" font-size="12" fill="#57606a">Jun</text>
+<text x="698" y="37" font-size="12" fill="#57606a">Jul</text>
+<text x="758" y="37" font-size="12" fill="#57606a">Aug</text>
 <text x="0" y="68" font-size="11" fill="#57606a">Mon</text>
 <text x="0" y="98" font-size="11" fill="#57606a">Wed</text>
 <text x="0" y="128" font-size="11" fill="#57606a">Fri</text>
 <rect x="38" y="158" width="9" height="9" rx="2" fill="#d97745"/>
 <text x="51" y="166" font-size="11" fill="#57606a">Claude 4.4B</text>
 <rect x="143" y="158" width="9" height="9" rx="2" fill="#3578c8"/>
-<text x="156" y="166" font-size="11" fill="#57606a">Codex 17.7B</text>
+<text x="156" y="166" font-size="11" fill="#57606a">Codex 23.1B</text>
 <text x="687" y="166" font-size="11" fill="#57606a">Less</text>
 <rect x="713" y="157" width="12" height="12" rx="2" fill="#ebedf0"/>
 <rect x="728" y="157" width="12" height="12" rx="2" fill="#eee8f8"/>

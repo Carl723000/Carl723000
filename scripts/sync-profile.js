@@ -97,7 +97,7 @@ async function syncProfile(options = {}) {
   try {
     assertExpectedRepo();
     assertCleanWorkingTree();
-    console.log(`[${new Date().toISOString()}] Weekly heatmap sync started`);
+    console.log(`[${new Date().toISOString()}] Heatmap sync started`);
 
     if (!options.skipNetwork) {
       runGit(['pull', '--quiet', '--rebase']);
@@ -116,7 +116,7 @@ async function syncProfile(options = {}) {
       runGit([
         '-c', `user.name=${COMMIT_NAME}`,
         '-c', `user.email=${COMMIT_EMAIL}`,
-        'commit', '--quiet', '-m', 'chore: weekly Claude + Codex heatmap refresh',
+        'commit', '--quiet', '-m', 'chore: refresh Claude + Codex heatmap',
         '--', HEATMAP_PATH,
       ]);
       console.log('Committed the refreshed combined heatmap');
@@ -128,7 +128,7 @@ async function syncProfile(options = {}) {
       runGit(['push', '--quiet']);
       console.log('GitHub profile is up to date');
     }
-    console.log(`[${new Date().toISOString()}] Weekly heatmap sync completed`);
+    console.log(`[${new Date().toISOString()}] Heatmap sync completed`);
     return { changed: changed.status === 1, generation: result };
   } finally {
     await releaseLock();

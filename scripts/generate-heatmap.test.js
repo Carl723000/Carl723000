@@ -10,12 +10,14 @@ const { DatabaseSync } = require('node:sqlite');
 const {
   collectClaudeDaily,
   combineDaily,
+  calendarZonesEquivalent,
   dayKeyInZone,
   loadCcuCodexIndexSource,
   loadClaudePluginHeatmapSource,
   loadCodexBarSource,
   mergeCodexSources,
   renderHeatmapSvg,
+  resolveTimeZone,
 } = require('./generate-heatmap');
 
 async function temporaryDirectory(t) {
@@ -52,6 +54,10 @@ function claudeLine({
 
 test('dayKeyInZone applies the configured calendar zone', () => {
   assert.equal(dayKeyInZone(new Date('2026-08-26T16:30:00Z'), 'Asia/Hong_Kong'), '2026-08-27');
+  assert.equal(dayKeyInZone(new Date('2026-08-29T16:30:00Z'), 'Asia/Shanghai'), '2026-08-30');
+  assert.equal(dayKeyInZone(new Date('2026-08-29T15:59:59Z'), 'Asia/Shanghai'), '2026-08-29');
+  assert.equal(resolveTimeZone('local'), Intl.DateTimeFormat().resolvedOptions().timeZone);
+  assert.equal(calendarZonesEquivalent('Asia/Hong_Kong', 'Asia/Shanghai'), true);
 });
 
 test('Claude collection counts all four buckets and keeps the larger duplicate', async (t) => {
@@ -161,6 +167,26 @@ test('CCU Codex index prefers its complete lineage-reconciled daily aggregate', 
   const source = await loadCcuCodexIndexSource(indexPath, 'Asia/Hong_Kong');
   assert.deepEqual(source.daily, { '2026-08-27': 120 });
   assert.equal(source.details.authoritativeAggregate, true);
+});
+
+test('CCU Codex index accepts an equivalent local timezone label', async (t) => {
+  const root = await temporaryDirectory(t);
+  const indexPath = path.join(root, 'codex-index-v1.json');
+  await fsp.writeFile(indexPath, JSON.stringify({
+    files: {},
+    aggregate: { byDay: { '2026-08-27': { inputTotal: 100, outputTotal: 20 } } },
+    coverage: {
+      indexedFiles: 1,
+      totalFiles: 1,
+      complete: true,
+      identity: { complete: true, exactDuplicateFiles: 0, ambiguousSessionGroups: 0 },
+      period: { timeZone: 'Asia/Hong_Kong', allTime: { complete: true } },
+    },
+  }));
+
+  const source = await loadCcuCodexIndexSource(indexPath, 'Asia/Shanghai');
+  assert.deepEqual(source.daily, { '2026-08-27': 120 });
+  assert.equal(source.details.timezoneEquivalent, true);
 });
 
 test('CCU Codex index keeps the plugin aggregate after the file scan completes even with unresolved identity groups', async (t) => {

@@ -17,7 +17,62 @@ const os = require('node:os');
 const path = require('node:path');
 const readline = require('node:readline');
 
-const DEFAULT_TIME_ZONE = 'Asia/Hong_Kong';
+function systemTimeZone() {
+  return Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+}
+
+// Resolve the local zone at runtime so date boundaries follow the computer
+// that owns the token data. A config value of "local" remains portable across
+// machines; explicit IANA zones are still supported for reproducible runs.
+const DEFAULT_TIME_ZONE = systemTimeZone();
+
+function resolveTimeZone(value = 'local') {
+  const timeZone = value === 'local' || value === undefined || value === null || value === ''
+    ? systemTimeZone()
+    : String(value).trim();
+  if (!timeZone) throw new Error('Timezone must be a non-empty IANA timezone or local');
+  new Intl.DateTimeFormat('en', { timeZone }).format(new Date());
+  return timeZone;
+}
+
+function calendarZonesEquivalent(left, right) {
+  const leftZone = resolveTimeZone(left);
+  const rightZone = resolveTimeZone(right);
+  if (leftZone === rightZone) return true;
+
+  // Aggregate indexes store already-bucketed calendar days. Accept a source
+  // labelled with another IANA name only when both zones produce the same
+  // calendar date around every month boundary in the recent/pending window.
+  // This covers aliases such as Asia/Hong_Kong and Asia/Shanghai without
+  // weakening the check for genuinely different zones (or DST rules).
+  const leftFormatter = new Intl.DateTimeFormat('en-CA', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    timeZone: leftZone,
+  });
+  const rightFormatter = new Intl.DateTimeFormat('en-CA', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    timeZone: rightZone,
+  });
+  const year = new Date().getUTCFullYear();
+  for (let probeYear = year - 2; probeYear <= year + 2; probeYear += 1) {
+    for (let month = 0; month < 12; month += 1) {
+      for (const day of [1, 15, 28]) {
+        for (const hour of [0, 6, 12, 18, 23]) {
+          for (const minute of [0, 30]) {
+            const probe = new Date(Date.UTC(probeYear, month, day, hour, minute));
+            if (leftFormatter.format(probe) !== rightFormatter.format(probe)) return false;
+          }
+        }
+      }
+    }
+  }
+  return true;
+}
+
 const COMBINED_SCALE = ['#ebedf0', '#eee8f8', '#d8c9f1', '#bca5e6', '#8668c7', '#4f2f87'];
 // Five active bands are tied to fixed shares of the observed daily maximum.
 // Unlike quantiles, these thresholds do not brighten more days merely because
@@ -92,11 +147,12 @@ function intensityBucket(value, thresholds) {
 
 function dayKeyInZone(date, timeZone) {
   if (!(date instanceof Date) || Number.isNaN(date.getTime())) return '';
+  const resolvedTimeZone = timeZone === 'local' || !timeZone ? systemTimeZone() : timeZone;
   const formatter = new Intl.DateTimeFormat('en-CA', {
     year: 'numeric',
     month: '2-digit',
     day: '2-digit',
-    timeZone,
+    timeZone: resolvedTimeZone,
   });
   const parts = formatter.formatToParts(date);
   const get = (type) => parts.find((part) => part.type === type)?.value || '';
@@ -218,7 +274,7 @@ function claudeTokenRecord(parsed, timeZone) {
 }
 
 async function collectClaudeDaily(options = {}) {
-  const timeZone = options.timeZone || DEFAULT_TIME_ZONE;
+  const timeZone = resolveTimeZone(options.timeZone || DEFAULT_TIME_ZONE);
   const roots = options.roots || await discoverClaudeRoots(options.environment, options.home);
   const files = [];
   for (const root of roots) files.push(...await walkJsonlFiles(root));
@@ -277,7 +333,7 @@ async function collectClaudeDaily(options = {}) {
 }
 
 async function loadClaudePluginHeatmapSource(snapshotPath, options = {}) {
-  const timeZone = options.timeZone || DEFAULT_TIME_ZONE;
+  const timeZone = resolveTimeZone(options.timeZone || DEFAULT_TIME_ZONE);
   const stat = await fsp.stat(snapshotPath);
   const svg = await fsp.readFile(snapshotPath, 'utf8');
   const endDateISO = options.snapshotEndDateISO
@@ -416,6 +472,7 @@ function coverageOf(daily) {
 }
 
 async function loadCcuCodexIndexSource(indexPath, timeZone = DEFAULT_TIME_ZONE) {
+  timeZone = resolveTimeZone(timeZone);
   const stat = await fsp.stat(indexPath);
   const index = JSON.parse(await fsp.readFile(indexPath, 'utf8'));
   if (!index || typeof index !== 'object' || !index.files || typeof index.files !== 'object') {
@@ -437,7 +494,10 @@ async function loadCcuCodexIndexSource(indexPath, timeZone = DEFAULT_TIME_ZONE) 
   }
 
   const indexedTimeZone = indexCoverage?.period?.timeZone;
-  if (indexedTimeZone && indexedTimeZone !== timeZone) {
+  const indexedTimezoneEquivalent = indexedTimeZone && indexedTimeZone !== timeZone
+    ? calendarZonesEquivalent(indexedTimeZone, timeZone)
+    : false;
+  if (indexedTimeZone && indexedTimeZone !== timeZone && !indexedTimezoneEquivalent) {
     throw new Error(
       `ClaudeCodeUsage Codex index uses ${indexedTimeZone}, not ${timeZone}: ${indexPath}`,
     );
@@ -465,6 +525,8 @@ async function loadCcuCodexIndexSource(indexPath, timeZone = DEFAULT_TIME_ZONE) 
         ambiguousGroups: safeCount(indexCoverage?.identity?.ambiguousSessionGroups),
         identityComplete: indexCoverage?.identity?.complete !== false,
         timezoneMismatches: 0,
+        indexedTimeZone: indexedTimeZone || timeZone,
+        timezoneEquivalent: indexedTimezoneEquivalent,
         authoritativeAggregate: true,
       },
     };
@@ -478,7 +540,10 @@ async function loadCcuCodexIndexSource(indexPath, timeZone = DEFAULT_TIME_ZONE) 
     const contribution = index.files[key];
     const period = contribution?.aggregate?.period;
     if (!period || typeof period.days !== 'object') continue;
-    if (period.timeZone && period.timeZone !== timeZone) {
+    const periodTimezoneEquivalent = period.timeZone && period.timeZone !== timeZone
+      ? calendarZonesEquivalent(period.timeZone, timeZone)
+      : false;
+    if (period.timeZone && period.timeZone !== timeZone && !periodTimezoneEquivalent) {
       timezoneMismatches += 1;
       continue;
     }
@@ -544,7 +609,7 @@ async function loadCodexBarSource(databasePath) {
 async function discoverCodexSources(options = {}) {
   const home = options.home || os.homedir();
   const environment = options.environment || process.env;
-  const requested = options.codexSource || environment.CCU_CODEX_SOURCE || 'auto';
+  const requested = options.codexSource || environment.CCU_CODEX_SOURCE || 'ccu-index';
   if (!['auto', 'ccu-index', 'codexbar'].includes(requested)) {
     throw new Error(`Unknown Codex source: ${requested}`);
   }
@@ -645,7 +710,7 @@ function combineDaily(claudeDaily, codexDaily) {
 }
 
 function renderHeatmapSvg(daily, options = {}) {
-  const timeZone = options.timeZone || DEFAULT_TIME_ZONE;
+  const timeZone = resolveTimeZone(options.timeZone || DEFAULT_TIME_ZONE);
   const weeks = Math.max(1, Math.min(53, options.weeks || 53));
   const today = options.endDateISO || dayKeyInZone(new Date(), timeZone);
   const scale = options.scale?.length === 6 ? options.scale : COMBINED_SCALE;
@@ -784,7 +849,9 @@ async function writeAtomic(file, contents) {
 async function generate(options = {}) {
   const repoRoot = options.repoRoot || path.resolve(__dirname, '..');
   const localConfig = options.localConfig || readLocalConfig(repoRoot);
-  const timeZone = options.timeZone || localConfig.timeZone || process.env.CCU_HEATMAP_TZ || DEFAULT_TIME_ZONE;
+  const timeZone = resolveTimeZone(
+    options.timeZone || localConfig.timeZone || process.env.CCU_HEATMAP_TZ || DEFAULT_TIME_ZONE,
+  );
   // Validate the timezone early instead of silently shifting dates.
   dayKeyInZone(new Date(), timeZone);
   const claudeSnapshot = options.claudeSnapshot
@@ -886,6 +953,7 @@ module.exports = {
   claudeTokenRecord,
   collectClaudeDaily,
   combineDaily,
+  calendarZonesEquivalent,
   dayKeyInZone,
   discoverCodexSources,
   generate,
@@ -894,4 +962,6 @@ module.exports = {
   loadCodexBarSource,
   mergeCodexSources,
   renderHeatmapSvg,
+  resolveTimeZone,
+  systemTimeZone,
 };
