@@ -17,7 +17,7 @@ node scripts/sync-control.js run
 node scripts/sync-control.js schedule Mon,Fri 20:00
 ```
 
-The default is **Monday and Friday at 20:00, local machine time**. The per-user LaunchAgent is
+The default is **Monday and Friday at 11:00, local machine time**. The per-user LaunchAgent is
 stored at `~/Library/LaunchAgents/com.carl723000.ai-token-heatmap-weekly.plist`.
 Turning the switch off unloads and disables the job but keeps the plist, so the
 operation is reversible. A missed calendar run is coalesced by macOS and runs

@@ -25,7 +25,7 @@ const DEFAULT_CONFIG = Object.freeze({
   timeZone: 'local',
   codexSource: 'ccu-index',
   weekdays: [1, 5],
-  hour: 20,
+  hour: 11,
   minute: 0,
 });
 

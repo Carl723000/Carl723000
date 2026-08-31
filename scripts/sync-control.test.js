@@ -15,8 +15,8 @@ const {
   weekdayNumbers,
 } = require('./sync-control');
 
-test('default schedule is Monday and Friday at 20:00 local time', () => {
-  assert.equal(scheduleLabel(DEFAULT_CONFIG), 'Monday + Friday 20:00');
+test('default schedule is Monday and Friday at 11:00 local time', () => {
+  assert.equal(scheduleLabel(DEFAULT_CONFIG), 'Monday + Friday 11:00');
   assert.deepEqual(DEFAULT_CONFIG.weekdays, [1, 5]);
   assert.equal(DEFAULT_CONFIG.timeZone, 'local');
   assert.equal(DEFAULT_CONFIG.codexSource, 'ccu-index');
@@ -48,9 +48,9 @@ test('plist contains both calendar triggers and escapes local paths', () => {
   });
   assert.match(plist, /<key>StartCalendarInterval<\/key>\s*<array>/);
   assert.equal((plist.match(/<key>Weekday<\/key>/g) || []).length, 2);
-  assert.match(plist, /<key>Weekday<\/key>\s*<integer>1<\/integer>\s*<key>Hour<\/key>\s*<integer>20<\/integer>/);
-  assert.match(plist, /<key>Weekday<\/key>\s*<integer>5<\/integer>\s*<key>Hour<\/key>\s*<integer>20<\/integer>/);
-  assert.match(plist, /<key>Hour<\/key>\s*<integer>20<\/integer>/);
+  assert.match(plist, /<key>Weekday<\/key>\s*<integer>1<\/integer>\s*<key>Hour<\/key>\s*<integer>11<\/integer>/);
+  assert.match(plist, /<key>Weekday<\/key>\s*<integer>5<\/integer>\s*<key>Hour<\/key>\s*<integer>11<\/integer>/);
+  assert.match(plist, /<key>Hour<\/key>\s*<integer>11<\/integer>/);
   assert.match(plist, /\/Users\/A&amp;B\/node/);
   assert.match(plist, /<key>RunAtLoad<\/key>\s*<false\/>/);
 });
