@@ -9,9 +9,11 @@ const { DatabaseSync } = require('node:sqlite');
 
 const {
   collectClaudeDaily,
+  canonicalCodexContributions,
   combineDaily,
   calendarZonesEquivalent,
   dayKeyInZone,
+  discoverCodexSources,
   loadCcuCodexIndexSource,
   loadClaudePluginHeatmapSource,
   loadCodexBarSource,
@@ -19,6 +21,7 @@ const {
   renderHeatmapSvg,
   resolveTimeZone,
 } = require('./generate-heatmap');
+const { testPlugin, modernIndex } = require('./plugin-codex-aggregate.test-fixture');
 
 async function temporaryDirectory(t) {
   const directory = await fsp.mkdtemp(path.join(os.tmpdir(), 'combined-heatmap-'));
@@ -121,9 +124,9 @@ test('CCU Codex index excludes an exact active/archive duplicate without double-
   const archive = codexContribution('archive', 'same-session', 100, 20);
   await fsp.writeFile(indexPath, JSON.stringify({ files: { active, archive } }));
 
-  const source = await loadCcuCodexIndexSource(indexPath, 'Asia/Hong_Kong');
-  assert.deepEqual(source.daily, { '2026-08-27': 120 });
-  assert.equal(source.details.exactDuplicates, 1);
+  const source = canonicalCodexContributions({ active, archive });
+  assert.deepEqual([...source.canonicalKeys], ['active']);
+  assert.equal(source.exactDuplicates, 1);
 });
 
 test('CCU Codex index rejects an explicitly incomplete checkpoint', async (t) => {
@@ -147,7 +150,7 @@ test('CCU Codex index rejects an explicitly incomplete checkpoint', async (t) =>
   );
 });
 
-test('CCU Codex index prefers its complete lineage-reconciled daily aggregate', async (t) => {
+test('legacy UTC byDay is rejected rather than relabelled as local time', async (t) => {
   const root = await temporaryDirectory(t);
   const indexPath = path.join(root, 'codex-index-v1.json');
   await fsp.writeFile(indexPath, JSON.stringify({
@@ -164,50 +167,75 @@ test('CCU Codex index prefers its complete lineage-reconciled daily aggregate', 
     },
   }));
 
-  const source = await loadCcuCodexIndexSource(indexPath, 'Asia/Hong_Kong');
-  assert.deepEqual(source.daily, { '2026-08-27': 120 });
-  assert.equal(source.details.authoritativeAggregate, true);
+  await assert.rejects(loadCcuCodexIndexSource(indexPath, 'Asia/Hong_Kong'), /Unsupported plugin aggregate schema/);
 });
 
 test('CCU Codex index accepts an equivalent local timezone label', async (t) => {
   const root = await temporaryDirectory(t);
   const indexPath = path.join(root, 'codex-index-v1.json');
-  await fsp.writeFile(indexPath, JSON.stringify({
-    files: {},
-    aggregate: { byDay: { '2026-08-27': { inputTotal: 100, outputTotal: 20 } } },
-    coverage: {
-      indexedFiles: 1,
-      totalFiles: 1,
-      complete: true,
-      identity: { complete: true, exactDuplicateFiles: 0, ambiguousSessionGroups: 0 },
-      period: { timeZone: 'Asia/Hong_Kong', allTime: { complete: true } },
-    },
-  }));
+  const index = modernIndex();
+  index.coverage.period.timeZone = 'Asia/Hong_Kong';
+  index.files.current.aggregate.period.timeZone = 'Asia/Hong_Kong';
+  await fsp.writeFile(indexPath, JSON.stringify(index));
 
-  const source = await loadCcuCodexIndexSource(indexPath, 'Asia/Shanghai');
-  assert.deepEqual(source.daily, { '2026-08-27': 120 });
+  const source = await loadCcuCodexIndexSource(indexPath, 'Asia/Shanghai', { plugin: testPlugin });
+  assert.deepEqual(source.daily, { '2026-10-13': 120 });
   assert.equal(source.details.timezoneEquivalent, true);
 });
 
 test('CCU Codex index keeps the plugin aggregate after the file scan completes even with unresolved identity groups', async (t) => {
   const root = await temporaryDirectory(t);
   const indexPath = path.join(root, 'codex-index-v1.json');
-  await fsp.writeFile(indexPath, JSON.stringify({
-    files: {},
-    aggregate: { byDay: { '2026-08-27': { inputTotal: 100, outputTotal: 20 } } },
-    coverage: {
-      indexedFiles: 2,
-      totalFiles: 2,
-      complete: true,
-      identity: { complete: false, exactDuplicateFiles: 0, ambiguousSessionGroups: 5 },
-      period: { timeZone: 'Asia/Hong_Kong', allTime: { complete: true } },
-    },
-  }));
+  const index = modernIndex();
+  index.coverage.identity = { complete: false, exactDuplicateFiles: 0, ambiguousSessionGroups: 5 };
+  await fsp.writeFile(indexPath, JSON.stringify(index));
 
-  const source = await loadCcuCodexIndexSource(indexPath, 'Asia/Hong_Kong');
-  assert.deepEqual(source.daily, { '2026-08-27': 120 });
+  const source = await loadCcuCodexIndexSource(indexPath, 'Asia/Shanghai', { plugin: testPlugin });
+  assert.deepEqual(source.daily, { '2026-10-13': 120 });
   assert.equal(source.details.identityComplete, false);
   assert.equal(source.details.ambiguousGroups, 5);
+});
+
+test('modern index projects local period days rather than relabelling UTC byDay', async (t) => {
+  const root = await temporaryDirectory(t);
+  const indexPath = path.join(root, 'codex-index-v1.json');
+  await fsp.writeFile(indexPath, JSON.stringify(modernIndex()));
+  const source = await loadCcuCodexIndexSource(indexPath, 'Asia/Shanghai', { plugin: testPlugin });
+  assert.deepEqual(source.daily, { '2026-10-13': 120 });
+  assert.equal(source.details.localDayProjection, true);
+  assert.equal(source.dailyCosts['2026-10-13'].pricingCoverage, 1);
+});
+
+test('namespace discovery selects Shanghai and ignores travel, temporary and symlink files', async (t) => {
+  const home = await temporaryDirectory(t);
+  const root = path.join(home, 'Library', 'Application Support', 'Code', 'User', 'globalStorage', 'growthjack.claude-code-usage');
+  await fsp.mkdir(root, { recursive: true });
+  const makeIndex = (timeZone, input) => {
+    const index = modernIndex();
+    const tokens = { inputTotal: input, outputTotal: 0, cachedInput: 0, reasoningOutput: 0 };
+    index.coverage.period.timeZone = timeZone;
+    index.files.current.aggregate.total = tokens;
+    index.files.current.aggregate.period.timeZone = timeZone;
+    index.files.current.aggregate.period.days = { '2026-10-12': { total: tokens, byModel: { known: tokens } } };
+    return index;
+  };
+  const old = path.join(root, 'codex-index-v1.json');
+  const shanghai = path.join(root, `codex-index-v1-${'a'.repeat(64)}.json`);
+  await fsp.writeFile(old, JSON.stringify(makeIndex('Europe/Istanbul', 1)));
+  await fsp.writeFile(path.join(root, `codex-index-v1-${'b'.repeat(64)}.json`), JSON.stringify(makeIndex('Europe/Istanbul', 2)));
+  await fsp.writeFile(shanghai, JSON.stringify(makeIndex('Asia/Shanghai', 100)));
+  await fsp.writeFile(`${shanghai}.tmp-1`, JSON.stringify(makeIndex('Asia/Shanghai', 999)));
+  await fsp.symlink(shanghai, path.join(root, `codex-index-v1-${'c'.repeat(64)}.json`));
+  const sources = await discoverCodexSources({ home, environment: {}, timeZone: 'Asia/Shanghai', plugin: testPlugin });
+  assert.equal(sources.length, 1);
+  assert.equal(sources[0].path, shanghai);
+  assert.deepEqual(sources[0].daily, { '2026-10-12': 100 });
+  // Do not mask an unfinished scoped checkpoint with an older full legacy file.
+  const unfinished = makeIndex('Asia/Shanghai', 100);
+  unfinished.coverage.complete = false;
+  await fsp.writeFile(shanghai, JSON.stringify(unfinished));
+  await fsp.writeFile(old, JSON.stringify(makeIndex('Asia/Shanghai', 1)));
+  await assert.rejects(discoverCodexSources({ home, environment: {}, timeZone: 'Asia/Shanghai', plugin: testPlugin }), /still building/);
 });
 
 test('Claude plugin heatmap snapshot is accepted as aggregate input without reading transcripts', async (t) => {

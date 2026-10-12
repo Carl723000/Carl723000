@@ -16,6 +16,7 @@ const fsp = require('node:fs/promises');
 const os = require('node:os');
 const path = require('node:path');
 const readline = require('node:readline');
+const { projectPluginIndex } = require('./plugin-codex-aggregate');
 
 function systemTimeZone() {
   return Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
@@ -471,9 +472,10 @@ function coverageOf(daily) {
   };
 }
 
-async function loadCcuCodexIndexSource(indexPath, timeZone = DEFAULT_TIME_ZONE) {
+async function loadCcuCodexIndexSource(indexPath, timeZone = DEFAULT_TIME_ZONE, options = {}) {
   timeZone = resolveTimeZone(timeZone);
-  const stat = await fsp.stat(indexPath);
+  const stat = await fsp.lstat(indexPath);
+  if (!stat.isFile() || stat.isSymbolicLink()) throw new Error('Codex index must be a regular file');
   const index = JSON.parse(await fsp.readFile(indexPath, 'utf8'));
   if (!index || typeof index !== 'object' || !index.files || typeof index.files !== 'object') {
     throw new Error(`Unsupported ClaudeCodeUsage Codex index: ${indexPath}`);
@@ -503,70 +505,29 @@ async function loadCcuCodexIndexSource(indexPath, timeZone = DEFAULT_TIME_ZONE) 
     );
   }
 
-  const aggregateDays = index.aggregate?.byDay;
-  if (aggregateDays && typeof aggregateDays === 'object') {
-    const daily = {};
-    for (const [day, total] of Object.entries(aggregateDays)) {
-      addCount(daily, day, safeCount(total?.inputTotal) + safeCount(total?.outputTotal));
-    }
-    if (Object.keys(daily).length === 0) {
-      throw new Error(`ClaudeCodeUsage Codex index has no daily data in ${timeZone}`);
-    }
+  // Modern indexes keep aggregate.byDay in UTC. Their verified period sidecars
+  // are the source of configured-local dates and exact-model cost attribution.
+  {
+    if (index.schemaVersion !== 3) throw new Error(`Unsupported plugin aggregate schema ${index.schemaVersion}; refresh the installed plugin`);
+    const projection = projectPluginIndex(index, options);
     return {
-      kind: 'ccu-index',
-      label: 'ClaudeCodeUsage Codex index',
-      path: indexPath,
-      mtimeMs: stat.mtimeMs,
-      daily,
-      coverage: coverageOf(daily),
+      kind: 'ccu-index', label: 'ClaudeCodeUsage Codex index', path: indexPath,
+      mtimeMs: stat.mtimeMs, daily: projection.daily,
+      dailyCosts: projection.dailyCosts, apiEquivalent: projection.apiEquivalent,
+      coverage: coverageOf(projection.daily),
       details: {
-        canonicalFiles: safeCount(indexCoverage?.indexedFiles) || Object.keys(index.files).length,
+        canonicalFiles: safeCount(indexCoverage?.indexedFiles),
         exactDuplicates: safeCount(indexCoverage?.identity?.exactDuplicateFiles),
         ambiguousGroups: safeCount(indexCoverage?.identity?.ambiguousSessionGroups),
         identityComplete: indexCoverage?.identity?.complete !== false,
-        timezoneMismatches: 0,
-        indexedTimeZone: indexedTimeZone || timeZone,
-        timezoneEquivalent: indexedTimezoneEquivalent,
-        authoritativeAggregate: true,
+        timezoneMismatches: 0, indexedTimeZone: projection.timeZone,
+        timezoneEquivalent: indexedTimezoneEquivalent, authoritativeAggregate: true,
+        localDayProjection: true, asOfDay: projection.asOfDay,
+        pricingBasis: projection.pricingBasis, unknownModels: projection.unknownModels,
       },
     };
   }
 
-  const { canonicalKeys, exactDuplicates, ambiguousGroups } = canonicalCodexContributions(index.files);
-  const daily = {};
-  let timezoneMismatches = 0;
-  let canonicalFiles = 0;
-  for (const key of canonicalKeys) {
-    const contribution = index.files[key];
-    const period = contribution?.aggregate?.period;
-    if (!period || typeof period.days !== 'object') continue;
-    const periodTimezoneEquivalent = period.timeZone && period.timeZone !== timeZone
-      ? calendarZonesEquivalent(period.timeZone, timeZone)
-      : false;
-    if (period.timeZone && period.timeZone !== timeZone && !periodTimezoneEquivalent) {
-      timezoneMismatches += 1;
-      continue;
-    }
-    canonicalFiles += 1;
-    for (const [day, slice] of Object.entries(period.days)) {
-      const total = slice?.total || {};
-      // Codex inputTotal already contains cached input; outputTotal already
-      // contains reasoning output. Adding cached/reasoning again would double-count.
-      addCount(daily, day, safeCount(total.inputTotal) + safeCount(total.outputTotal));
-    }
-  }
-  if (Object.keys(daily).length === 0) {
-    throw new Error(`ClaudeCodeUsage Codex index has no daily data in ${timeZone}`);
-  }
-  return {
-    kind: 'ccu-index',
-    label: 'ClaudeCodeUsage Codex index',
-    path: indexPath,
-    mtimeMs: stat.mtimeMs,
-    daily,
-    coverage: coverageOf(daily),
-    details: { canonicalFiles, exactDuplicates, ambiguousGroups, timezoneMismatches },
-  };
 }
 
 async function loadCodexBarSource(databasePath) {
@@ -613,8 +574,7 @@ async function discoverCodexSources(options = {}) {
   if (!['auto', 'ccu-index', 'codexbar'].includes(requested)) {
     throw new Error(`Unknown Codex source: ${requested}`);
   }
-  const indexCandidates = [
-    environment.CCU_CODEX_INDEX,
+  const legacyCandidates = [
     path.join(home, 'Library', 'Application Support', 'Code', 'User', 'globalStorage',
       'growthjack.claude-code-usage', 'codex-index-v1.json'),
     path.join(home, 'Library', 'Application Support', 'Cursor', 'User', 'globalStorage',
@@ -622,6 +582,28 @@ async function discoverCodexSources(options = {}) {
     path.join(home, 'Library', 'Application Support', 'Windsurf', 'User', 'globalStorage',
       'growthjack.claude-code-usage', 'codex-index-v1.json'),
   ].filter(Boolean);
+  // A namespace cache supersedes the legacy file; select one matching the
+  // local calendar, never add travel-zone copies of the same source together.
+  const indexCandidates = [];
+  if (environment.CCU_CODEX_INDEX) {
+    indexCandidates.push(environment.CCU_CODEX_INDEX);
+  } else if (requested === 'auto' || requested === 'ccu-index') {
+    for (const legacy of legacyCandidates) {
+      let entries = [];
+      try { entries = await fsp.readdir(path.dirname(legacy)); }
+      catch (error) { if (error.code !== 'ENOENT') throw error; }
+      const scoped = [];
+      for (const name of entries.filter((name) => /^codex-index-v1-[a-f0-9]{64}\.json$/.test(name))) {
+        const candidate = path.join(path.dirname(legacy), name);
+        const stat = await fsp.lstat(candidate);
+        if (!stat.isFile() || stat.isSymbolicLink()) continue;
+        const value = JSON.parse(await fsp.readFile(candidate, 'utf8'));
+        if (value.coverage?.period?.timeZone === resolveTimeZone(options.timeZone)) scoped.push(candidate);
+      }
+      if (scoped.length > 1) throw new Error('Multiple Codex source namespaces match the local zone; set CCU_CODEX_INDEX explicitly');
+      indexCandidates.push(...(scoped.length ? scoped : [legacy]));
+    }
+  }
   const databaseCandidates = [
     environment.CCU_CODEXBAR_DB,
     path.join(home, 'Library', 'Caches', 'CodexBar', 'cost-usage', 'cost-usage.sqlite'),
@@ -634,11 +616,14 @@ async function discoverCodexSources(options = {}) {
     for (const candidate of [...new Set(indexCandidates)]) {
       if (!(await fileExists(candidate))) continue;
       try {
-        sources.push(await loadCcuCodexIndexSource(candidate, options.timeZone));
+        sources.push(await loadCcuCodexIndexSource(candidate, options.timeZone, options));
       } catch (error) {
         if (error.code === 'CCU_INDEX_INCOMPLETE') incompleteIndexError ||= error;
         errors.push(`${candidate}: ${error.message}`);
       }
+    }
+    if (sources.filter((source) => source.kind === 'ccu-index').length > 1) {
+      throw new Error('Multiple editor Codex sources found; set CCU_CODEX_INDEX to the intended plugin checkpoint');
     }
     if (incompleteIndexError && !sources.some((source) => source.kind === 'ccu-index')) {
       throw incompleteIndexError;
@@ -890,6 +875,9 @@ async function generate(options = {}) {
     ? Math.max(0, logState.newest - codex.primary.mtimeMs)
     : 0;
   const warnings = [];
+  if (claude.stats.snapshotDay && claude.stats.snapshotDay < rendered.summary.endISO) {
+    warnings.push(`Claude plugin snapshot is from ${claude.stats.snapshotDay}; newer Claude data has not been exported`);
+  }
   if (lagMs > 30 * 60 * 1000) {
     warnings.push(`Codex aggregate source trails the newest local log by ${Math.round(lagMs / 60_000)} minutes`);
   }
