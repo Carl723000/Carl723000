@@ -1,5 +1,9 @@
 # Local twice-weekly heatmap sync
 
+Paired token/fee publication now uses [PAIRED-HEATMAP-SYNC.md](PAIRED-HEATMAP-SYNC.md).
+The single-token input notes below document the older manual utility, not the
+new scheduled publication path. The old SVG does not satisfy paired freshness.
+
 This profile image combines the trailing-year token activity from **Claude
 Code + Codex**. Generation and scheduling happen on the local machine because
 the source logs are not available to a cloud GitHub Action.

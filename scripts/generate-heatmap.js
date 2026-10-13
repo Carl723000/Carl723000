@@ -700,7 +700,7 @@ function renderHeatmapSvg(daily, options = {}) {
   const today = options.endDateISO || dayKeyInZone(new Date(), timeZone);
   const scale = options.scale?.length === 6 ? options.scale : COMBINED_SCALE;
   const gridEndSaturday = addDays(today, 6 - weekdayOf(today));
-  const startISO = addDays(gridEndSaturday, -(weeks * 7 - 1));
+  const startISO = options.startDateISO || addDays(gridEndSaturday, -(weeks * 7 - 1));
   const gridStart = addDays(startISO, -weekdayOf(startISO));
   const span = daysBetween(gridStart, today) + 1;
   const columns = Math.max(0, Math.ceil(span / 7));

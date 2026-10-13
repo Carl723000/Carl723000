@@ -36,6 +36,9 @@ test('schedule parsing accepts names and validates time', () => {
 test('config rejects an invalid Codex source', () => {
   assert.throws(() => normalizeConfig({ codexSource: 'raw-logs' }), /codexSource/);
   assert.throws(() => normalizeConfig({ claudeSnapshot: '  ' }), /claudeSnapshot/);
+  assert.throws(() => normalizeConfig({ claudeAggregate: '  ' }), /claudeAggregate/);
+  assert.throws(() => normalizeConfig({ codexAggregate: '  ' }), /codexAggregate/);
+  assert.throws(() => normalizeConfig({ profileCapture: '  ' }), /profileCapture/);
 });
 
 test('plist contains both calendar triggers and escapes local paths', () => {

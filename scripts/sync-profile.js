@@ -8,10 +8,9 @@ const fs = require('node:fs');
 const fsp = require('node:fs/promises');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
-const { generate } = require('./generate-heatmap');
+const { generateProfileHeatmaps, PROFILE_IMAGES } = require('./generate-profile-heatmaps');
 
 const REPO_ROOT = path.resolve(__dirname, '..');
-const HEATMAP_PATH = 'claude-code-heatmap.svg';
 const LOCK_PATH = path.join(REPO_ROOT, '.heatmap-sync.lock');
 const COMMIT_NAME = 'Carl723000';
 const COMMIT_EMAIL = '74130028+Carl723000@users.noreply.github.com';
@@ -102,24 +101,27 @@ async function syncProfile(options = {}) {
     if (!options.skipNetwork) {
       runGit(['pull', '--quiet', '--rebase']);
     }
-    const result = await generate({ repoRoot: REPO_ROOT });
+    const result = await generateProfileHeatmaps({ repoRoot: REPO_ROOT });
     // Data-quality notices belong in the normal job log. The launchd error log
     // is reserved for actual failures so a healthy run stays unambiguous.
     for (const warning of result.warnings) console.log(`Notice: ${warning}`);
 
-    const changed = runGit(['diff', '--quiet', '--', HEATMAP_PATH], { allowFailure: true });
+    const changed = runGit(['diff', '--quiet', '--', ...PROFILE_IMAGES], { allowFailure: true });
+    const newImages = PROFILE_IMAGES.filter((name) => runGit(['ls-files', '--', name]).stdout.trim() === '');
     if (changed.status !== 0 && changed.status !== 1) {
-      throw new Error(`Could not inspect ${HEATMAP_PATH}`);
+      throw new Error('Could not inspect generated profile heatmaps');
     }
-    if (changed.status === 1) {
-      runGit(['add', '--', HEATMAP_PATH]);
+    if (changed.status === 1 || newImages.length > 0) {
+      runGit(['add', '--', ...PROFILE_IMAGES]);
+      // Review exactly the two generated paths before preserving the milestone.
+      console.log(runGit(['diff', '--cached', '--stat', '--', ...PROFILE_IMAGES]).stdout.trim());
       runGit([
         '-c', `user.name=${COMMIT_NAME}`,
         '-c', `user.email=${COMMIT_EMAIL}`,
-        'commit', '--quiet', '-m', 'chore: refresh Claude + Codex heatmap',
-        '--', HEATMAP_PATH,
+        'commit', '--quiet', '-m', 'chore: refresh Claude + Codex token and API-equivalent heatmaps',
+        '--', ...PROFILE_IMAGES,
       ]);
-      console.log('Committed the refreshed combined heatmap');
+      console.log('Committed both refreshed profile heatmaps together');
     } else {
       console.log('Heatmap content is unchanged');
     }
@@ -129,7 +131,7 @@ async function syncProfile(options = {}) {
       console.log('GitHub profile is up to date');
     }
     console.log(`[${new Date().toISOString()}] Heatmap sync completed`);
-    return { changed: changed.status === 1, generation: result };
+    return { changed: changed.status === 1 || newImages.length > 0, generation: result };
   } finally {
     await releaseLock();
   }

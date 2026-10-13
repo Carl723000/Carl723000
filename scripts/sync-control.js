@@ -86,6 +86,15 @@ function normalizeConfig(value = {}) {
   ) {
     throw new Error('claudeSnapshot must be a non-empty path when provided');
   }
+  if (config.claudeAggregate !== undefined && (typeof config.claudeAggregate !== 'string' || !config.claudeAggregate.trim())) {
+    throw new Error('claudeAggregate must be a non-empty numeric checkpoint path');
+  }
+  if (config.codexAggregate !== undefined && (typeof config.codexAggregate !== 'string' || !config.codexAggregate.trim())) {
+    throw new Error('codexAggregate must be a non-empty numeric checkpoint path');
+  }
+  if (config.profileCapture !== undefined && (typeof config.profileCapture !== 'string' || !config.profileCapture.trim())) {
+    throw new Error('profileCapture must be a non-empty dual-provider numeric export path');
+  }
   return config;
 }
 
@@ -224,8 +233,7 @@ function showStatus() {
   const config = readConfig();
   console.log(`Heatmap sync: ${isEnabled() ? 'ON' : 'OFF'}`);
   console.log(`Schedule: ${scheduleLabel(config)} (${displayTimeZone(config.timeZone)})`);
-  console.log(`Claude source: ${config.claudeSnapshot || 'local fallback'}`);
-  console.log(`Codex source: ${config.codexSource}`);
+  console.log(`Dual-provider source: ${config.profileCapture || 'fresh numeric capture required (paired sync)'}`);
   console.log(`Log: ${LOG_PATH}`);
   console.log(`Errors: ${ERROR_LOG_PATH}`);
   return isEnabled();
