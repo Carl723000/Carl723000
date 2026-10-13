@@ -43,7 +43,7 @@ test('precision is retained through summation and providers remain separate', ()
   assert.equal(pair.summary.token.total, 320);
   assert.equal(pair.summary.costs[0].totalUSD, 1.2);
   assert.match(r.calls[0].options.title, /^\$1 API-equivalent · Claude Code/);
-  assert.match(r.calls[1].options.title, /^\$2\+ API-equivalent · Codex/);
+  assert.match(r.calls[1].options.title, /^\$2 API-equivalent · Codex/);
   assert.match(pair.images[PROFILE_IMAGES[1]], /data-provider="claude"/);
   assert.match(pair.images[PROFILE_IMAGES[1]], /data-provider="codex"/);
   assert.equal(wholeMoney(0.2), '<$1');
@@ -57,7 +57,7 @@ test('explicit zero, entirely unpriced and no recorded activity do not collapse'
   c.daily['2026-10-13'] = { tokens: 10, amountUSD: null, pricingStatus: 'unpriced', pricedCount: 0, unpricedCount: 10 };
   renderProfilePair(c, codex(), { targetDay: '2026-10-13', timeZone: 'Asia/Shanghai', renderer: r });
   assert.match(r.calls[2].options.title, /^Unpriced/);
-  assert.equal(r.calls[2].options.cellStyle('2026-10-13').dashed, true);
+  assert.equal(r.calls[2].options.cellStyle('2026-10-13').dashed, undefined);
   renderProfilePair({ daily: {} }, codex(), { targetDay: '2026-10-13', timeZone: 'Asia/Shanghai', renderer: r });
   assert.match(r.calls[4].options.title, /^No data/);
 });

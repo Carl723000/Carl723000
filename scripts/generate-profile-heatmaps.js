@@ -28,7 +28,7 @@ function amountBlock(daily, name, options, renderer, scale) {
   const unpriced = days.reduce((sum, [, row]) => sum + row.unpricedCount, 0);
   const hasActivity = days.some(([, row]) => row.tokens > 0 || row.pricingStatus === 'complete');
   const amountLabel = !hasActivity ? 'No data' : !priced && days.some(([, row]) => row.tokens > 0)
-    ? 'Unpriced' : wholeMoney(total) + (unpriced > 0 ? '+' : '');
+    ? 'Unpriced' : wholeMoney(total);
   const coverage = priced + unpriced > 0 ? priced / (priced + unpriced) : 1;
   const title = `${amountLabel} API-equivalent · ${name} · trailing 12 months`;
   const maximum = Math.max(0, ...amounts.map(([, row]) => row.amountUSD));
@@ -36,18 +36,18 @@ function amountBlock(daily, name, options, renderer, scale) {
   const svg = renderer.render(usage, {
     metric: 'cost', startDateISO: options.startDay, endDateISO: options.targetDay,
     title, locale: 'en', scale, intensityMode: 'linear',
-    watermark: `${name}${unpriced > 0 ? ` · ${Math.round(coverage * 100)}% priced` : ''}`,
-    ariaLabel: `${title}. USD estimate, not a bill. Pricing coverage ${(coverage * 100).toFixed(2)}%.`,
+    watermark: name,
+    ariaLabel: title,
     tooltip: (day) => {
       const row = daily[day];
       if (!row || row.pricingStatus === 'empty') return `${day} · No recorded activity`;
       if (row.pricingStatus === 'unpriced') return `${day} · ${name} · Unpriced`;
-      return `${day} · ${name} · ${wholeMoney(row.amountUSD)}${row.pricingStatus === 'partial' ? '+' : ''} API-equivalent`;
+      return `${day} · ${name} · ${wholeMoney(row.amountUSD)} API-equivalent`;
     },
     cellStyle: (day) => {
       const row = daily[day];
       if (!row || row.pricingStatus === 'empty') return { fill: scale[0] };
-      if (row.pricingStatus === 'unpriced') return { fill: scale[0], stroke: '#6b7280', dashed: true };
+      if (row.pricingStatus === 'unpriced') return { fill: scale[0] };
       const band = row.amountUSD <= 0 ? 0 : 1 + [0.05, 0.15, 0.35, 0.65].filter((ratio) => row.amountUSD > maximum * ratio).length;
       return { fill: scale[band] };
     },
@@ -77,7 +77,6 @@ function renderProfilePair(claude, codex, options = {}) {
   const width = Math.max(...sizes.map(([w]) => w));
   const height = sizes[0][1] + sizes[1][1] + 12;
   const costSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-label="Claude Code and Codex API-equivalent heatmaps">\n`
-    + '<desc>USD reference estimates, not a bill. Providers are shown separately; partial pricing is marked +.</desc>\n'
     + blocks.map(({ svg }, i) => svg.replace(/^<svg /, `<svg x="0" y="${i ? sizes[0][1] + 12 : 0}" data-provider="${i ? 'codex' : 'claude'}" `)).join('\n') + '\n</svg>';
   return { images: { [PROFILE_IMAGES[0]]: token.svg, [PROFILE_IMAGES[1]]: costSvg },
     summary: { token: token.summary, costs: blocks.map(({ svg, ...summary }) => summary), timeZone: options.timeZone, asOfDay: options.targetDay } };

@@ -3,7 +3,8 @@
 The profile keeps its combined token heatmap and adds a compact API-equivalent
 image, with separate Claude Code and Codex fee rows. Both images use the same
 local calendar, six-step palette and trailing 366-day range. Prices are shown
-as integers; source amounts retain full precision. `+` marks partial pricing.
+as integers; source amounts retain full precision. Coverage, timezone and
+pricing-quality markers stay in internal validation, not visible card labels.
 
 ## Schedule and switch
 
