@@ -3,6 +3,20 @@ const assert = require('node:assert/strict');
 const test = require('node:test');
 const { projectPluginIndex } = require('./plugin-codex-aggregate');
 const { modernIndex, testPlugin } = require('./plugin-codex-aggregate.test-fixture');
+const { gpt62EquivalentCost } = require('./gpt-62-pricing');
+
+test('prices GPT-6.2 base, cache reads/writes and output without counting reasoning twice', () => {
+  const usage = { inputTotal: 3e6, cachedInput: 1e6, cacheWriteInput: 1e6, outputTotal: 1e6, reasoningOutput: 5e5 };
+  assert.equal(gpt62EquivalentCost('gpt-6.2-astra', usage).equivalentUsd, 58.4);
+  assert.equal(gpt62EquivalentCost('openai/gpt-6.2-sol', usage).equivalentUsd, 14.6);
+  assert.equal(gpt62EquivalentCost('gpt-6.2-unknown', usage), undefined);
+  const index = modernIndex();
+  const day = index.files.current.aggregate.period.days['2026-10-13'];
+  day.byModel = { 'gpt-6.2-astra': day.total };
+  const result = projectPluginIndex(index, { plugin: testPlugin });
+  assert.equal(result.apiEquivalent.pricedTokens, result.apiEquivalent.totalTokens);
+  assert.ok(result.apiEquivalent.equivalentUsd > 0);
+});
 
 test('uses local dates, subsets and prices without repeated cached or reasoning tokens', () => {
   const result = projectPluginIndex(modernIndex(), { plugin: testPlugin });

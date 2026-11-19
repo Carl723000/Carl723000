@@ -55,6 +55,22 @@ function amountBlock(daily, name, options, renderer, scale) {
   return { svg, totalUSD: total, pricedTokens: priced, unpricedTokens: unpriced, coverage };
 }
 
+function codexDailyCosts(codex) {
+  return codex.providerDaily || Object.fromEntries(Object.entries(codex.dailyCosts).map(([day, cost]) => [day, {
+    tokens: codex.daily[day], amountUSD: cost.pricedTokens > 0 ? cost.equivalentUsd : cost.totalTokens > 0 ? null : 0,
+    pricingStatus: cost.totalTokens === 0 ? 'complete' : cost.pricedTokens === 0 ? 'unpriced'
+      : cost.pricedTokens < cost.totalTokens ? 'partial' : 'complete',
+    pricedCount: cost.pricedTokens, unpricedCount: cost.totalTokens - cost.pricedTokens,
+  }]));
+}
+
+function renderCodexFeePreview(codex, options = {}) {
+  const renderer = options.renderer || pluginRenderer(options.pluginOut);
+  const targetDay = codex.asOfDay;
+  return amountBlock(codexDailyCosts(codex), 'Codex', { targetDay, startDay: addDays(targetDay, -365) },
+    renderer, renderer.COMBINED_ACTIVITY_PALETTES.academicViolet);
+}
+
 function renderProfilePair(claude, codex, options = {}) {
   const renderer = options.renderer || pluginRenderer(options.pluginOut);
   const palette = renderer.normalizeCombinedHeatmapPalette(options.palette);
@@ -65,14 +81,8 @@ function renderProfilePair(claude, codex, options = {}) {
   const token = renderHeatmapSvg(combineDaily(claudeTokens, codex.daily), {
     timeZone: options.timeZone, startDateISO: startDay, endDateISO: options.targetDay, scale,
   });
-  const codexCosts = codex.providerDaily || Object.fromEntries(Object.entries(codex.dailyCosts).map(([day, cost]) => [day, {
-    tokens: codex.daily[day], amountUSD: cost.pricedTokens > 0 ? cost.equivalentUsd : cost.totalTokens > 0 ? null : 0,
-    pricingStatus: cost.totalTokens === 0 ? 'complete' : cost.pricedTokens === 0 ? 'unpriced'
-      : cost.pricedTokens < cost.totalTokens ? 'partial' : 'complete',
-    pricedCount: cost.pricedTokens, unpricedCount: cost.totalTokens - cost.pricedTokens,
-  }]));
   const blocks = [amountBlock(claude.daily, 'Claude Code', { ...options, startDay }, renderer, scale),
-    amountBlock(codexCosts, 'Codex', { ...options, startDay }, renderer, scale)];
+    amountBlock(codexDailyCosts(codex), 'Codex', { ...options, startDay }, renderer, scale)];
   const sizes = blocks.map(({ svg }) => svg.match(/width="(\d+)" height="(\d+)"/).slice(1).map(Number));
   const width = Math.max(...sizes.map(([w]) => w));
   const height = sizes[0][1] + sizes[1][1] + 12;
@@ -159,4 +169,4 @@ async function generateProfileHeatmaps(options = {}) {
 if (require.main === module) generateProfileHeatmaps().then(({ summary }) => console.log(JSON.stringify(summary, null, 2)))
   .catch(error => { console.error(`Paired heatmap update stopped: ${error.message}`); process.exitCode = 1; });
 
-module.exports = { PROFILE_IMAGES, wholeMoney, renderProfilePair, replaceImagePair, generateProfileHeatmaps };
+module.exports = { PROFILE_IMAGES, wholeMoney, renderProfilePair, renderCodexFeePreview, replaceImagePair, generateProfileHeatmaps };

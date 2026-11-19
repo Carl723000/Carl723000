@@ -5,6 +5,7 @@
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
+const { gpt62EquivalentCost } = require('./gpt-62-pricing');
 
 function installedPluginOut(environment = process.env, home = os.homedir()) {
   if (environment.CCU_PLUGIN_OUT) return environment.CCU_PLUGIN_OUT;
@@ -66,7 +67,9 @@ function projectPluginIndex(raw, options = {}) {
       let attributedInput = 0;
       let attributedOutput = 0;
       for (const [model, tokens] of Object.entries(slice.byModel || {})) {
-        const cost = plugin.equivalentCostBreakdownFromProviderTokens(model, tokens);
+        const cost = options.useInstalledPricingOnly
+          ? plugin.equivalentCostBreakdownFromProviderTokens(model, tokens)
+          : gpt62EquivalentCost(model, tokens) ?? plugin.equivalentCostBreakdownFromProviderTokens(model, tokens);
         if (cost.pricedTokens < cost.totalTokens) unknownModels.add(model);
         costs.push(cost);
         attributedInput += tokens.inputTotal;
@@ -94,7 +97,7 @@ function projectPluginIndex(raw, options = {}) {
     timeZone,
     asOfDay: index.coverage.period.asOfDay,
     currentManifestVerified: false,
-    pricingBasis: 'installed-plugin-model-prices',
+    pricingBasis: options.useInstalledPricingOnly ? 'installed-plugin-model-prices' : 'plugin-prices-plus-gpt-6.2-standard',
   };
 }
 
